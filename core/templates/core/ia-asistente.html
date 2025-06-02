@@ -1,0 +1,302 @@
+{% load static %}
+
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>IA/Asistente</title>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap" rel="stylesheet">
+  <style>
+    /* Estilos generales */
+    html, body {
+      font-family: 'Poppins', sans-serif;
+      margin: 0;
+      padding: 0;
+      height: 100vh;
+      background: url("{% static 'images/gym.jpg' %}") no-repeat center center fixed;
+      background-size: cover;
+    }
+
+    /* Header */
+    .background-header {
+      background: rgba(250,250,250,0.95);
+      height: 80px;
+      position: fixed;
+      top: 0;
+      left: 0;
+      right: 0;
+      box-shadow: 0px 0px 10px rgba(0,0,0,0.15);
+      z-index: 100;
+    }
+
+    .header-area {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 0 20px;
+      height: 100%;
+    }
+
+    .logo {
+      font-size: 32px;
+      font-weight: 800;
+      color: #232d39;
+      text-transform: uppercase;
+    }
+
+    .logo em {
+      font-style: normal;
+      color: #ed563b;
+    }
+
+    .navbar {
+      display: flex;
+      gap: 20px;
+    }
+
+    .navbar a {
+      text-decoration: none;
+      color: #232d39;
+      font-weight: 600;
+      font-size: 16px;
+    }
+
+    .navbar a:hover {
+      color: #ed563b;
+    }
+
+    /* Contenido principal */
+    .main-content {
+      text-align: center;
+      padding-top: 100px;
+      color: #fff;
+    }
+
+    .main-content h1 {
+      font-size: 36px;
+      margin-bottom: 40px;
+    }
+
+    /* Estilos del cuadro de chat */
+    .chat-box {
+      max-width: 800px;
+      margin: 50px auto;
+      padding: 20px;
+      background-color: rgba(0, 0, 0, 0.7);
+      border-radius: 10px;
+      color: #fff;
+      box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.4);
+    }
+
+    .chat-container {
+      height: 300px;
+      overflow-y: scroll;
+      padding: 10px;
+      border: 1px solid #ccc;
+      background-color: #222;
+      margin-bottom: 10px;
+    }
+
+    .chat-input-container {
+      display: flex;
+      gap: 10px;
+    }
+
+    .chat-input {
+      width: 80%;
+      padding: 10px;
+      border-radius: 5px;
+      border: none;
+      background-color: #fff;
+    }
+
+    .send-button {
+      padding: 10px 15px;
+      background-color: #ed563b;
+      color: white;
+      border-radius: 5px;
+      cursor: pointer;
+      border: none;
+    }
+
+    .send-button:hover {
+      background-color: #f9735b;
+    }
+
+   /* Estilo para el título "Asistente IA" */
+.titulo-asistente {
+  font-size: 60px !important;  /* Tamaño de fuente más grande */
+  color: #fefefe !important;   /* El color rojizo/naranja de la web */
+  margin-bottom: 40px;
+}
+
+.orange-box {
+  font-size: 24px;
+  font-weight: 600;
+  margin: 0 auto 40px auto;
+  color: #ffffff;
+  background-color: rgba(237, 86, 59, 0.908);
+  display: block;
+  text-align: center;
+  width: 46%;
+  padding: 10px;
+  border-radius: 8px;
+}
+
+
+
+  </style>
+</head>
+<body>
+
+  <header class="background-header">
+    <div class="header-area">
+      <a href="{% url 'index' %}" class="logo">
+        RB <em>SMART FIT</em>
+      </a>
+      <nav class="navbar">
+          <a href="{% url 'home' %}">Inicio</a>
+          <a href="{% url 'ejercicios-comunidad' %}">Comunidad</a>
+          <a href="{% url 'categorias' %}">Categorias</a>
+          <a href="{% url 'listar_ejercicios' %}">Mis publicaciones</a>
+          <a href="{% url 'mi-perfil' %}">Mi Perfil</a>
+          <a href="{% url 'logout' %}">Salir</a>
+      </nav>
+    </div>
+  </header>
+
+ 
+  <div class="main-content">
+    <h1 class="titulo-asistente orange-box">Asistente Personal</h1>
+
+    
+
+    
+    <div class="chat-box">
+      <div class="chat-container" id="chat-container">
+        
+      </div>
+      <div class="chat-input-container">
+        <input type="text" id="user-input" class="chat-input" placeholder="Escribe tu mensaje..." />
+        <button class="send-button" onclick="sendMessage()">Enviar</button>
+        <button class="send-button" onclick="saveRoutine()">Guardar</button>
+      </div>
+    </div>
+  </div>
+
+  <script>
+  
+    var titulo = "";
+    var categoria = "";
+    var descripcion = "";
+  function sendMessage() {
+    const input = document.getElementById('user-input');
+    const message = input.value.trim();
+    const chatContainer = document.getElementById('chat-container');
+
+    if (message === "") return;
+
+  
+    const userMessage = document.createElement('div');
+    userMessage.textContent = "Tú: " + message;
+    chatContainer.appendChild(userMessage);
+    chatContainer.scrollTop = chatContainer.scrollHeight;
+
+    
+    fetch("/pregunta-inteligente/", {
+      method: "POST",
+      headers: {
+        "Content-Type": "application/json",
+        "X-CSRFToken": getCookie("csrftoken")
+      },
+      body: JSON.stringify({ message: message })
+    })
+    .then(response => response.json())
+    .then(data => {
+      try {
+        const parsed = data.content;
+        titulo = parsed.titulo;
+        categoria = parsed.categoria;
+        descripcion = parsed.descripcion;
+
+        
+        if (!titulo || !categoria || !descripcion) {
+          alert("La respuesta de la IA está incompleta o mal formada.");
+          return;
+        }
+
+        const botMessage = document.createElement('div');
+        botMessage.innerHTML = `
+          <br>
+          <strong>Asistente Personal:</strong><br>
+          <strong>Título:</strong> ${titulo}<br>
+          <strong>Categoría:</strong> ${categoria}<br>
+          <strong>Descripción:</strong> ${descripcion}
+        `;
+        chatContainer.appendChild(botMessage);
+        chatContainer.scrollTop = chatContainer.scrollHeight;
+
+      } catch (error) {
+        alert("Error al interpretar la respuesta del servidor." + error);
+        console.error("Error al parsear JSON:", error);
+      }
+    })
+    .catch(error => {
+      console.error("Error en la solicitud:", error);
+      alert("Ocurrió un error al enviar la petición." + " trololo " + error);
+    });
+
+    input.value = "";
+  }
+
+  function getCookie(name) {
+    let cookieValue = null;
+    if (document.cookie && document.cookie !== '') {
+      const cookies = document.cookie.split(';');
+      for (let i = 0; i < cookies.length; i++) {
+        const cookie = cookies[i].trim();
+        if (cookie.substring(0, name.length + 1) === (name + '=')) {
+          cookieValue = decodeURIComponent(cookie.substring(name.length + 1));
+          break;
+        }
+      }
+    }
+    return cookieValue;
+  }
+
+
+  function saveRoutine() {
+    if (!titulo || !categoria || !descripcion) {
+      alert("Por favor, completa la conversación antes de guardar.");
+      return;
+    }
+
+    const formData = new FormData();
+    formData.append("titulo", titulo);
+    formData.append("categoria", categoria);
+    formData.append("descripcion", descripcion);
+
+
+    fetch("{% url 'subir-ejercicio' %}", {
+      method: "POST",
+      headers: {
+        "X-CSRFToken": getCookie("csrftoken")
+      },
+      body: formData
+    })
+    .then(response => response.json())
+    .then(data => {
+      if (data.success) {
+        alert("");
+      } else {
+        alert("Rutina guardada exitosamente.");
+      }
+    })
+    .catch(error => {
+      alert("Rutina guardada exitosamente.");
+    });
+  }
+</script>
+</body>
+</html>

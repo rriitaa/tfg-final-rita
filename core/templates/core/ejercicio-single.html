@@ -1,0 +1,141 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Detalle de Publicación</title>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap" rel="stylesheet">
+  <style>
+    html, body {
+      font-family: 'Poppins', sans-serif;
+      margin: 0;
+      padding: 0;
+      height: 100vh;
+      background: url("{% static 'images/gym.jpg' %}") no-repeat center center fixed;
+      background-size: cover;
+    }
+
+    .background-header {
+      background: rgba(250,250,250,0.95);
+      height: 80px;
+      position: fixed;
+      top: 0;
+      left: 0;
+      right: 0;
+      box-shadow: 0px 0px 10px rgba(0,0,0,0.15);
+      z-index: 100;
+    }
+
+    .header-area {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 0 20px;
+      height: 100%;
+    }
+
+    .logo {
+      font-size: 32px;
+      font-weight: 800;
+      color: #232d39;
+      text-transform: uppercase;
+    }
+
+    .logo em {
+      font-style: normal;
+      color: #ed563b;
+    }
+
+    .navbar {
+      display: flex;
+      gap: 20px;
+    }
+
+    .navbar a {
+      text-decoration: none;
+      color: #232d39;
+      font-weight: 600;
+      font-size: 16px;
+    }
+
+    .navbar a:hover {
+      color: #ed563b;
+    }
+
+    .main-content {
+      padding-top: 120px;
+      color: #fff;
+      text-align: center;
+    }
+
+    .detalle-box {
+      background-color: rgba(246, 242, 242, 0.97);
+      color: #232d39;
+      max-width: 600px;
+      margin: 0 auto;
+      padding: 30px;
+      border-radius: 15px;
+      box-shadow: 0px 4px 10px rgba(0,0,0,0.2);
+    }
+
+    .detalle-box h2 {
+      font-size: 28px;
+      margin-bottom: 10px;
+    }
+
+    .detalle-info {
+      margin: 15px 0;
+      font-size: 18px;
+    }
+
+    .detalle-info span {
+      font-weight: bold;
+    }
+
+    .volver-link {
+      display: inline-block;
+      margin-top: 20px;
+      color: #ed563b;
+      text-decoration: none;
+      font-weight: 600;
+    }
+
+    .volver-link:hover {
+      text-decoration: underline;
+    }
+
+  </style>
+</head>
+<body>
+
+  <!-- Header -->
+  <header class="background-header">
+    <div class="header-area">
+      <a href="{% url 'home' %}" class="logo">
+        RB <em>SMART FIT</em>
+      </a>
+      <nav class="navbar">
+        <a href="{% url 'home' %}">Inicio</a>
+        <a href="{% url 'ejercicios-comunidad' %}">Comunidad</a>
+        <a href="{% url 'categorias' %}">Categorias</a>
+        <a href="{% url 'listar_ejercicios' %}">Mis publicaciones</a>
+        <a href="{% url 'mi-perfil' %}">Mi Perfil</a>
+        <a href="{% url 'logout' %}">Salir</a>
+      </nav>
+    </div>
+  </header>
+
+  <!-- Contenido Detalle -->
+  <div class="main-content">
+    <div class="detalle-box">
+      <h2>{{ ejercicio.titulo }}</h2>
+      <div class="detalle-info"><span>Categoría:</span> {{ ejercicio.categoria }}</div>
+      <div class="detalle-info"><span>Descripción:</span> {{ ejercicio.descripcion }}</div>
+      <div class="detalle-info"><span>Fecha:</span> {{ ejercicio.fecha_creacion|date:"d M Y H:i" }}</div>
+      <a href="{% url 'listar_ejercicios' %}" class="volver-link">← Volver a publicaciones</a>
+    </div>
+  </div>
+
+</body>
+</html>

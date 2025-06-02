@@ -1,0 +1,156 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Eliminar ejercicio</title>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap" rel="stylesheet">
+  <style>
+    html, body {
+      font-family: 'Poppins', sans-serif;
+      margin: 0;
+      padding: 0;
+      height: 100vh;
+      background: url("{% static 'images/gym.jpg' %}") no-repeat center center fixed;
+      background-size: cover;
+    }
+    .background-header {
+      background: rgba(250,250,250,0.95);
+      height: 80px;
+      position: fixed;
+      top: 0;
+      left: 0;
+      right: 0;
+      box-shadow: 0px 0px 10px rgba(0,0,0,0.15);
+      z-index: 100;
+    }
+    .header-area {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 0 20px;
+      height: 100%;
+    }
+    .logo {
+      font-size: 32px;
+      font-weight: 800;
+      color: #232d39;
+      text-transform: uppercase;
+    }
+    .logo em {
+      font-style: normal;
+      color: #ed563b;
+    }
+    .navbar {
+      display: flex;
+      gap: 20px;
+    }
+    .navbar a {
+      text-decoration: none;
+      color: #232d39;
+      font-weight: 600;
+      font-size: 16px;
+    }
+    .navbar a:hover {
+      color: #ed563b;
+    }
+
+    .delete-container {
+      max-width: 480px;
+      margin: 130px auto 0 auto;
+      background: rgba(255,255,255,0.93);
+      padding: 32px 28px 24px 28px;
+      border-radius: 16px;
+      box-shadow: 0 2px 18px rgba(0,0,0,0.12);
+      text-align: center;
+    }
+    .delete-container h2 {
+      color: #ed563b;
+      margin-bottom: 14px;
+      font-weight: 700;
+    }
+    .delete-warning {
+      font-size: 17px;
+      color: #323030;
+      margin-bottom: 28px;
+    }
+    .delete-title {
+      font-size: 21px;
+      color: #232d39;
+      font-weight: bold;
+      margin-bottom: 20px;
+    }
+    .delete-actions {
+      display: flex;
+      justify-content: center;
+      gap: 22px;
+      margin-top: 22px;
+    }
+    .delete-btn {
+      background: #ed563b;
+      color: #fff;
+      border: none;
+      padding: 10px 26px;
+      border-radius: 7px;
+      font-weight: 600;
+      font-size: 17px;
+      cursor: pointer;
+      transition: background 0.2s;
+    }
+    .delete-btn:hover {
+      background: #c54429;
+    }
+    .cancel-btn {
+      background: #e2e2e2;
+      color: #232d39;
+      border: none;
+      padding: 10px 18px;
+      border-radius: 7px;
+      font-weight: 500;
+      font-size: 16px;
+      cursor: pointer;
+      text-decoration: none;
+      transition: background 0.2s;
+    }
+    .cancel-btn:hover {
+      background: #cccccc;
+      color: #ed563b;
+    }
+  </style>
+</head>
+<body>
+  <!-- Header igual que en los otros templates -->
+  <header class="background-header">
+    <div class="header-area">
+      <a href="{% url 'home' %}" class="logo">
+        RB <em>SMART FIT</em>
+      </a>
+      <nav class="navbar">
+        <a href="{% url 'home' %}">Inicio</a>
+        <a href="{% url 'ejercicios-comunidad' %}">Comunidad</a>
+        <a href="{% url 'categorias' %}">Categorias</a>
+        <a href="{% url 'listar_ejercicios' %}">Mis publicaciones</a>
+        <a href="{% url 'mi-perfil' %}">Mi Perfil</a>
+        <a href="{% url 'logout' %}">Salir</a>
+      </nav>
+    </div>
+  </header>
+  <div class="delete-container">
+    <h2>¿Eliminar ejercicio?</h2>
+    <div class="delete-warning">
+      ¿Estás seguro de que deseas eliminar este ejercicio? Esta acción <b>no se puede deshacer</b>.
+    </div>
+    <div class="delete-title">
+      {{ ejercicio.categoria }}: {{ ejercicio.titulo }}
+    </div>
+    <form method="post">
+      {% csrf_token %}
+      <div class="delete-actions">
+        <button type="submit" class="delete-btn">Sí, eliminar</button>
+        <a href="{% url 'listar_ejercicios' %}" class="cancel-btn">Cancelar</a>
+      </div>
+    </form>
+  </div>
+</body>
+</html>
