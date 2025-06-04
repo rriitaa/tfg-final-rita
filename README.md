@@ -83,7 +83,7 @@ openai==1.78.0
 
 ### 4. Configurar variables de entorno
 
-Crea un archivo llamado `.env` en la raíz del proyecto (donde está `manage.py`) y añade lo siguiente:
+Abre el archivo views.py y añade tu clave de OpenAI
 
 ```
 OPENAI_API_KEY=tu_clave_de_openai_aqui
