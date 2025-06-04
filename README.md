@@ -31,6 +31,7 @@ Antes de comenzar, asegúrate de tener instalado:
   ```
 - Comunicar Django con MySQL  
   ```bash
+  pip install django
   sudo apt install libmysqlclient-dev python3-dev
   ```
 
