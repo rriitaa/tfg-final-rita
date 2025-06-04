@@ -12,6 +12,9 @@ Este es un proyecto desarrollado con Django:
 Antes de comenzar, asegúrate de tener instalado:
 
 - Python 3.8 o superior
+  ```bash
+  sudo apt install python-is-python3
+  ```
 - Git  
   ```bash
   sudo apt install git -y
