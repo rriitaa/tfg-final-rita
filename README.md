@@ -59,10 +59,10 @@ cd tu-repo
 # Crear entorno virtual
 python -m venv venv
 
-# Activar en Windows
+# Activar en Windows (si procede)
 venv\Scripts\activate
 
-# Activar en macOS / Linux
+# Activar en macOS / Linux (si procede)
 source venv/bin/activate
 ```
 
