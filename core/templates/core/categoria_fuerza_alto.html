@@ -2,12 +2,11 @@
 <!DOCTYPE html>
 <html lang="es">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Ejercicios Cardio</title>
-  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap" rel="stylesheet">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Ejercicios Fuerza - Nivel Avanzado</title>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap" rel="stylesheet" />
   <style>
-    /* Estilos generales */
     html, body {
       font-family: 'Poppins', sans-serif;
       margin: 0;
@@ -17,15 +16,14 @@
       height: 100vh;
     }
 
-    /* Header */
     .background-header {
-      background: rgba(250,250,250,0.95);
+      background: rgba(250, 250, 250, 0.95);
       height: 80px;
       position: fixed;
       top: 0;
       left: 0;
       right: 0;
-      box-shadow: 0px 0px 10px rgba(0,0,0,0.15);
+      box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.15);
       z-index: 100;
     }
 
@@ -65,7 +63,6 @@
       color: #ed563b;
     }
 
-    /* Título y contenido de los ejercicios */
     .cardio-title {
       text-align: center;
       font-size: 40px;
@@ -131,7 +128,6 @@
       background-color: #e94d30;
     }
 
-    /* Responsividad */
     @media screen and (max-width: 768px) {
       .cardio-exercises {
         grid-template-columns: repeat(2, 1fr);
@@ -147,65 +143,95 @@
 </head>
 <body>
 
-  <!-- Header -->
-  <header class="background-header">
-    <div class="header-area">
-      <a href="{% url 'index' %}" class="logo">
-        RB <em>SMART FIT</em>
-      </a>
-      <nav class="navbar">
-          <a href="{% url 'home' %}">Inicio</a>
-          <a href="{% url 'ejercicios-comunidad' %}">Comunidad</a>
-          <a href="{% url 'categorias' %}">Categorias</a>
-          <a href="{% url 'listar_ejercicios' %}">Mis publicaciones</a>
-          <a href="{% url 'mi-perfil' %}">Mi Perfil</a>
-          <a href="{% url 'logout' %}">Salir</a>
-      </nav>
-    </div>
-  </header>
+<header class="background-header">
+  <div class="header-area">
+    <a href="{% url 'index' %}" class="logo">
+      RB <em>SMART FIT</em>
+    </a>
+    <nav class="navbar">
+      <a href="{% url 'home' %}">Inicio</a>
+      <a href="{% url 'ejercicios-comunidad' %}">Comunidad</a>
+      <a href="{% url 'categorias' %}">Categorias</a>
+      <a href="{% url 'listar_ejercicios' %}">Mis publicaciones</a>
+      <a href="{% url 'mi-perfil' %}">Mi Perfil</a>
+      <a href="{% url 'logout' %}">Salir</a>
+    </nav>
+  </div>
+</header>
 
-  <!-- Main Content -->
-  <div class="cardio-title">
-    <h1>Ejercicios Cardio</h1>
+<div class="cardio-title">
+  <h1>Ejercicios Fuerza - Nivel Avanzado</h1>
+</div>
+
+<div class="cardio-exercises">
+
+  <div class="exercise">
+    <h2>Flexiones a una mano</h2>
+    <p>Desafío avanzado para la fuerza y estabilidad del tren superior, requiere gran control y balance.</p>
+    <ul>
+      <li>4 series de 6-8 repeticiones por mano</li>
+      <li>Intensidad: Muy alta</li>
+      <li>Beneficios: Fuerza unilateral, equilibrio y coordinación</li>
+    </ul>
+    <img src="{% static 'images/flexion-una-mano.jpg' %}" alt="Flexiones a una mano" style="width: 100%; border-radius: 8px; margin-top: 10px;">
   </div>
 
-  <div class="cardio-exercises">
-    <!-- Ejercicios Cardio -->
-    <div class="exercise">
-      <h2>Correr</h2>
-      <p>El running es uno de los mejores ejercicios para mejorar la resistencia cardiovascular. Puedes hacerlo en exterior o en cinta.</p>
-      <ul>
-        <li>Duración: 30 minutos</li>
-        <li>Intensidad: Alta</li>
-        <li>Beneficios: Mejora la circulación y quema calorías</li>
-      </ul>
-      <img src="{% static 'images/correr.jpg' %}" alt="Jumping Jacks" style="width: 100%; height: auto; border-radius: 8px; margin-top: 10px;">
-
-    </div>
-
-    <div class="exercise">
-      <h2>Jumping Jacks</h2>
-      <p>Este ejercicio es excelente para mejorar la coordinación y la agilidad. Se realiza en intervalos cortos y rápidos.</p>
-      <ul>
-        <li>Duración: 3 series de 20 repeticiones</li>
-        <li>Intensidad: Media-Alta</li>
-        <li>Beneficios: Aumenta la frecuencia cardíaca y mejora la resistencia</li>
-      </ul>
-      <img src="{% static 'images/jumping-jacks.jpg' %}" alt="Jumping Jacks" style="width: 100%; height: auto; border-radius: 8px; margin-top: 10px;">
-
-    </div>
-
-    <div class="exercise">
-      <h2>Salto de cuerda</h2>
-      <p>Saltando la cuerda se logran mejorar tanto la resistencia cardiovascular como la tonificación muscular.</p>
-      <ul>
-        <li>Duración: 15-20 minutos</li>
-        <li>Intensidad: Alta</li>
-        <li>Beneficios: Mejora la coordinación y la salud cardiovascular</li>
-      </ul>
-      <img src="{% static 'images/salto-cuerda.jpg' %}" alt="Jumping Jacks" style="width: 100%; height: auto; border-radius: 8px; margin-top: 10px;">
-
-    </div>
+  <div class="exercise">
+    <h2>Sentadillas con barra (Back Squat)</h2>
+    <p>Ejercicio fundamental para desarrollo máximo de fuerza y potencia en tren inferior.</p>
+    <ul>
+      <li>4 series de 8-10 repeticiones</li>
+      <li>Intensidad: Muy alta</li>
+      <li>Beneficios: Fuerza, potencia, estabilidad central</li>
+    </ul>
+    <img src="{% static 'images/sentadilla-barra.jpg' %}" alt="Sentadillas con barra" style="width: 100%; border-radius: 8px; margin-top: 10px;">
   </div>
+
+  <div class="exercise">
+    <h2>Plancha con elevación alterna de pierna y brazo</h2>
+    <p>Variante extrema para fortalecer core y estabilidad con gran demanda neuromuscular.</p>
+    <ul>
+      <li>4 series de 40 segundos</li>
+      <li>Intensidad: Muy alta</li>
+      <li>Beneficios: Core, estabilidad y control corporal</li>
+    </ul>
+    <img src="{% static 'images/plancha-elevacion.jpg' %}" alt="Plancha elevación alterna" style="width: 100%; border-radius: 8px; margin-top: 10px;">
+  </div>
+
+  <div class="exercise">
+    <h2>Peso muerto convencional pesado</h2>
+    <p>Ejercicio clave para fuerza máxima en cadena posterior y estabilidad lumbar.</p>
+    <ul>
+      <li>4 series de 6-8 repeticiones</li>
+      <li>Intensidad: Muy alta</li>
+      <li>Beneficios: Fuerza global, potencia y resistencia</li>
+    </ul>
+    <img src="{% static 'images/peso-muerto-pesado.jpg' %}" alt="Peso muerto pesado" style="width: 100%; border-radius: 8px; margin-top: 10px;">
+  </div>
+
+  <div class="exercise">
+    <h2>Zancadas con peso y salto pliométrico</h2>
+    <p>Combinación avanzada para potencia, resistencia y explosividad en piernas.</p>
+    <ul>
+      <li>4 series de 12 saltos con peso moderado</li>
+      <li>Intensidad: Muy alta</li>
+      <li>Beneficios: Fuerza explosiva, equilibrio y coordinación</li>
+    </ul>
+    <img src="{% static 'images/zancadas-peso-salto.jpg' %}" alt="Zancadas con salto y peso" style="width: 100%; border-radius: 8px; margin-top: 10px;">
+  </div>
+
+  <div class="exercise">
+    <h2>Sentadilla búlgara con mancuernas pesadas</h2>
+    <p>Ejercicio unilateral exigente para fuerza y estabilidad del tren inferior.</p>
+    <ul>
+      <li>4 series de 10-12 repeticiones por pierna</li>
+      <li>Intensidad: Muy alta</li>
+      <li>Beneficios: Fuerza unilateral, balance y potencia</li>
+    </ul>
+    <img src="{% static 'images/sentadilla-bulgara-pesada.jpg' %}" alt="Sentadilla búlgara con mancuernas" style="width: 100%; border-radius: 8px; margin-top: 10px;">
+  </div>
+
+</div>
+
 </body>
 </html>

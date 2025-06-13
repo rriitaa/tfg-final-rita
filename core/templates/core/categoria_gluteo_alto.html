@@ -2,12 +2,11 @@
 <!DOCTYPE html>
 <html lang="es">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Ejercicios Cardio</title>
-  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap" rel="stylesheet">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Ejercicios Glúteos - Nivel Avanzado</title>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap" rel="stylesheet" />
   <style>
-    /* Estilos generales */
     html, body {
       font-family: 'Poppins', sans-serif;
       margin: 0;
@@ -17,7 +16,6 @@
       height: 100vh;
     }
 
-    /* Header */
     .background-header {
       background: rgba(250,250,250,0.95);
       height: 80px;
@@ -65,7 +63,6 @@
       color: #ed563b;
     }
 
-    /* Título y contenido de los ejercicios */
     .cardio-title {
       text-align: center;
       font-size: 40px;
@@ -131,7 +128,6 @@
       background-color: #e94d30;
     }
 
-    /* Responsividad */
     @media screen and (max-width: 768px) {
       .cardio-exercises {
         grid-template-columns: repeat(2, 1fr);
@@ -147,65 +143,93 @@
 </head>
 <body>
 
-  <!-- Header -->
-  <header class="background-header">
-    <div class="header-area">
-      <a href="{% url 'index' %}" class="logo">
-        RB <em>SMART FIT</em>
-      </a>
-      <nav class="navbar">
-          <a href="{% url 'home' %}">Inicio</a>
-          <a href="{% url 'ejercicios-comunidad' %}">Comunidad</a>
-          <a href="{% url 'categorias' %}">Categorias</a>
-          <a href="{% url 'listar_ejercicios' %}">Mis publicaciones</a>
-          <a href="{% url 'mi-perfil' %}">Mi Perfil</a>
-          <a href="{% url 'logout' %}">Salir</a>
-      </nav>
-    </div>
-  </header>
+<header class="background-header">
+  <div class="header-area">
+    <a href="{% url 'index' %}" class="logo">
+      RB <em>SMART FIT</em>
+    </a>
+    <nav class="navbar">
+      <a href="{% url 'home' %}">Inicio</a>
+      <a href="{% url 'ejercicios-comunidad' %}">Comunidad</a>
+      <a href="{% url 'categorias' %}">Categorias</a>
+      <a href="{% url 'listar_ejercicios' %}">Mis publicaciones</a>
+      <a href="{% url 'mi-perfil' %}">Mi Perfil</a>
+      <a href="{% url 'logout' %}">Salir</a>
+    </nav>
+  </div>
+</header>
 
-  <!-- Main Content -->
-  <div class="cardio-title">
-    <h1>Ejercicios Cardio</h1>
+<div class="cardio-title">
+  <h1>Ejercicios Glúteos - Nivel Avanzado</h1>
+</div>
+
+<div class="cardio-exercises">
+  <div class="exercise">
+    <h2>Sentadilla búlgara con peso</h2>
+    <p>Variante avanzada que aumenta la carga y trabaja cada pierna de forma independiente.</p>
+    <ul>
+      <li>4 series de 12 repeticiones por pierna</li>
+      <li>Intensidad: Alta</li>
+      <li>Beneficios: Fuerza y equilibrio unilateral</li>
+    </ul>
+    <img src="{% static 'images/sentadilla-bulgara-peso.jpg' %}" alt="Sentadilla búlgara con peso" style="width: 100%; border-radius: 8px; margin-top: 10px;">
   </div>
 
-  <div class="cardio-exercises">
-    <!-- Ejercicios Cardio -->
-    <div class="exercise">
-      <h2>Correr</h2>
-      <p>El running es uno de los mejores ejercicios para mejorar la resistencia cardiovascular. Puedes hacerlo en exterior o en cinta.</p>
-      <ul>
-        <li>Duración: 30 minutos</li>
-        <li>Intensidad: Alta</li>
-        <li>Beneficios: Mejora la circulación y quema calorías</li>
-      </ul>
-      <img src="{% static 'images/correr.jpg' %}" alt="Jumping Jacks" style="width: 100%; height: auto; border-radius: 8px; margin-top: 10px;">
-
-    </div>
-
-    <div class="exercise">
-      <h2>Jumping Jacks</h2>
-      <p>Este ejercicio es excelente para mejorar la coordinación y la agilidad. Se realiza en intervalos cortos y rápidos.</p>
-      <ul>
-        <li>Duración: 3 series de 20 repeticiones</li>
-        <li>Intensidad: Media-Alta</li>
-        <li>Beneficios: Aumenta la frecuencia cardíaca y mejora la resistencia</li>
-      </ul>
-      <img src="{% static 'images/jumping-jacks.jpg' %}" alt="Jumping Jacks" style="width: 100%; height: auto; border-radius: 8px; margin-top: 10px;">
-
-    </div>
-
-    <div class="exercise">
-      <h2>Salto de cuerda</h2>
-      <p>Saltando la cuerda se logran mejorar tanto la resistencia cardiovascular como la tonificación muscular.</p>
-      <ul>
-        <li>Duración: 15-20 minutos</li>
-        <li>Intensidad: Alta</li>
-        <li>Beneficios: Mejora la coordinación y la salud cardiovascular</li>
-      </ul>
-      <img src="{% static 'images/salto-cuerda.jpg' %}" alt="Jumping Jacks" style="width: 100%; height: auto; border-radius: 8px; margin-top: 10px;">
-
-    </div>
+  <div class="exercise">
+    <h2>Hip Thrust con barra</h2>
+    <p>Ejercicio clave para glúteos, enfatizando la fuerza y potencia en la cadera.</p>
+    <ul>
+      <li>4 series de 10-15 repeticiones</li>
+      <li>Intensidad: Muy alta</li>
+      <li>Beneficios: Desarrollo máximo de glúteos</li>
+    </ul>
+    <img src="{% static 'images/hip-thrust-barra.jpg' %}" alt="Hip Thrust con barra" style="width: 100%; border-radius: 8px; margin-top: 10px;">
   </div>
+
+  <div class="exercise">
+    <h2>Step-ups con mancuerna pesada</h2>
+    <p>Ejercicio para fuerza funcional que también mejora estabilidad y coordinación.</p>
+    <ul>
+      <li>4 series de 15 repeticiones por pierna</li>
+      <li>Intensidad: Alta</li>
+      <li>Beneficios: Tonificación y fuerza en glúteos y piernas</li>
+    </ul>
+    <img src="{% static 'images/step-ups-pesados.jpg' %}" alt="Step-ups con mancuerna" style="width: 100%; border-radius: 8px; margin-top: 10px;">
+  </div>
+
+  <div class="exercise">
+    <h2>Puente de glúteos con una pierna y banda</h2>
+    <p>Variación avanzada que aumenta el reto de estabilidad y fuerza del glúteo.</p>
+    <ul>
+      <li>4 series de 20 repeticiones</li>
+      <li>Intensidad: Alta</li>
+      <li>Beneficios: Activación profunda y aislamiento glúteo</li>
+    </ul>
+    <img src="{% static 'images/puente-gluteos-banda.jpg' %}" alt="Puente de glúteos con banda" style="width: 100%; border-radius: 8px; margin-top: 10px;">
+  </div>
+
+  <div class="exercise">
+    <h2>Sentadillas con salto y peso</h2>
+    <p>Ejercicio pliométrico para fuerza explosiva y potencia muscular.</p>
+    <ul>
+      <li>4 series de 12 repeticiones</li>
+      <li>Intensidad: Muy alta</li>
+      <li>Beneficios: Potencia y resistencia muscular</li>
+    </ul>
+    <img src="{% static 'images/sentadillas-salto-peso.jpg' %}" alt="Sentadillas con salto y peso" style="width: 100%; border-radius: 8px; margin-top: 10px;">
+  </div>
+
+  <div class="exercise">
+    <h2>Lunges caminando con mancuernas pesadas</h2>
+    <p>Variante que incrementa la dificultad y la fuerza en glúteos y piernas.</p>
+    <ul>
+      <li>4 series de 20 pasos (10 por pierna)</li>
+      <li>Intensidad: Muy alta</li>
+      <li>Beneficios: Fuerza, equilibrio y resistencia muscular</li>
+    </ul>
+    <img src="{% static 'images/lunges-pesados.jpg' %}" alt="Lunges caminando pesados" style="width: 100%; border-radius: 8px; margin-top: 10px;">
+  </div>
+</div>
+
 </body>
 </html>
