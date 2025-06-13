@@ -216,39 +216,39 @@
 
         const rutas = {
           fuerza: {
-            bajo: '{% url "categoria_fuerza" %}',
-            medio: '/categoria_fuerza_medio/',
-            avanzado: '/categoria_fuerza_avanzado/'
-          },
-          cardio: {
-            bajo: '{% url "categoria_cardio" %}',
-            medio: '/categoria_cardio_medio/',
-            avanzado: '/categoria_cardio_avanzado/'
-          },
-          flexibilidad: {
-            bajo: '{% url "categoria_flexibilidad" %}',
-            medio: '/categoria_flexibilidad_medio/',
-            avanzado: '/categoria_flexibilidad_avanzado/'
-          },
-          gluteos: {
-            bajo: '{% url "categoria_gluteos" %}',
-            medio: '/categoria_gluteos_medio/',
-            avanzado: '/categoria_gluteos_avanzado/'
-          },
-          espalda: {
-            bajo: '{% url "categoria_espalda" %}',
-            medio: '/categoria_espalda_medio/',
-            avanzado: '/categoria_espalda_avanzado/'
-          }
-        };
-
-        if (rutas[cat] && rutas[cat][niv]) {
-          window.location.href = rutas[cat][niv];
-        } else {
-          alert("Ruta no disponible.");
+          bajo: '{% url "categoria_fuerza" %}',
+          medio: '{% url "categoria_fuerza_medio" %}',
+          avanzado: '{% url "categoria_fuerza_alto" %}'
+        },
+        cardio: {
+          bajo: '{% url "categoria_cardio" %}',
+          medio: '{% url "categoria_cardio_medio" %}',
+          avanzado: '{% url "categoria_cardio_alto" %}'
+        },
+        flexibilidad: {
+          bajo: '{% url "categoria_flexibilidad" %}',
+          medio: '{% url "categoria_flexibilidad_medio" %}',
+          avanzado: '{% url "categoria_flexibilidad_alto" %}'
+        },
+        gluteos: {
+          bajo: '{% url "categoria_gluteos" %}',
+          medio: '{% url "categoria_gluteo_medio" %}',
+          avanzado: '{% url "categoria_gluteo_alto" %}'
+        },
+        espalda: {
+          bajo: '{% url "categoria_espalda" %}',
+          medio: '{% url "categoria_espalda_medio" %}',
+          avanzado: '{% url "categoria_espalda_alto" %}'
         }
-      });
+      };
+
+      if (rutas[cat] && rutas[cat][niv]) {
+        window.location.href = rutas[cat][niv];
+      } else {
+        alert("Ruta no disponible.");
+      }
     });
+  });
   </script>
 
 </body>

@@ -1,0 +1,235 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Ejercicios Espalda - Nivel Medio</title>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap" rel="stylesheet">
+  <style>
+    html, body {
+      font-family: 'Poppins', sans-serif;
+      margin: 0;
+      padding: 0;
+      background: url("{% static 'images/gym.jpg' %}") no-repeat center center fixed;
+      background-size: cover;
+      height: 100vh;
+    }
+
+    .background-header {
+      background: rgba(250,250,250,0.95);
+      height: 80px;
+      position: fixed;
+      top: 0;
+      left: 0;
+      right: 0;
+      box-shadow: 0px 0px 10px rgba(0,0,0,0.15);
+      z-index: 100;
+    }
+
+    .header-area {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 0 20px;
+      height: 100%;
+    }
+
+    .logo {
+      font-size: 32px;
+      font-weight: 800;
+      color: #232d39;
+      text-transform: uppercase;
+    }
+
+    .logo em {
+      font-style: normal;
+      color: #ed563b;
+    }
+
+    .navbar {
+      display: flex;
+      gap: 20px;
+    }
+
+    .navbar a {
+      text-decoration: none;
+      color: #232d39;
+      font-weight: 600;
+      font-size: 16px;
+    }
+
+    .navbar a:hover {
+      color: #ed563b;
+    }
+
+    .cardio-title {
+      text-align: center;
+      font-size: 40px;
+      color: #fff;
+      margin-top: -150px;
+      margin-bottom: 40px;
+    }
+
+    .cardio-exercises {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 20px;
+      padding: 20px;
+      justify-items: center;
+    }
+
+    .exercise {
+      background-color: rgba(255, 255, 255, 0.8);
+      padding: 20px;
+      border-radius: 10px;
+      box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+      text-align: center;
+      width: 100%;
+      max-width: 280px;
+    }
+
+    .exercise h2 {
+      font-size: 24px;
+      color: #232d39;
+      margin-bottom: 10px;
+    }
+
+    .exercise p {
+      font-size: 16px;
+      color: #555;
+      margin-bottom: 10px;
+    }
+
+    .exercise ul {
+      list-style: none;
+      padding: 0;
+      margin: 0;
+    }
+
+    .exercise li {
+      font-size: 14px;
+      color: #555;
+      margin-bottom: 5px;
+    }
+
+    .view-button {
+      background-color: #ed563b;
+      color: white;
+      padding: 10px 20px;
+      font-size: 16px;
+      text-decoration: none;
+      border-radius: 5px;
+      display: inline-block;
+      margin-top: 10px;
+    }
+
+    .view-button:hover {
+      background-color: #e94d30;
+    }
+
+    @media screen and (max-width: 768px) {
+      .cardio-exercises {
+        grid-template-columns: repeat(2, 1fr);
+      }
+    }
+
+    @media screen and (max-width: 480px) {
+      .cardio-exercises {
+        grid-template-columns: 1fr;
+      }
+    }
+  </style>
+</head>
+<body>
+
+<header class="background-header">
+  <div class="header-area">
+    <a href="{% url 'index' %}" class="logo">
+      RB <em>SMART FIT</em>
+    </a>
+    <nav class="navbar">
+      <a href="{% url 'home' %}">Inicio</a>
+      <a href="{% url 'ejercicios-comunidad' %}">Comunidad</a>
+      <a href="{% url 'categorias' %}">Categorias</a>
+      <a href="{% url 'listar_ejercicios' %}">Mis publicaciones</a>
+      <a href="{% url 'mi-perfil' %}">Mi Perfil</a>
+      <a href="{% url 'logout' %}">Salir</a>
+    </nav>
+  </div>
+</header>
+
+<div class="cardio-title">
+  <h1>Ejercicios Espalda - Nivel Medio</h1>
+</div>
+
+<div class="cardio-exercises">
+  <div class="exercise">
+    <h2>Remo con banda o mancuerna</h2>
+    <p>Ejercicio clave para trabajar dorsales y mejorar postura.</p>
+    <ul>
+      <li>3 series de 12 repeticiones</li>
+      <li>Intensidad: Media</li>
+      <li>Beneficios: Fortalece la espalda media y mejora el control escapular</li>
+    </ul>
+    <img src="{% static 'images/remo-banda.jpg' %}" alt="Remo con banda" style="width: 100%; border-radius: 8px; margin-top: 10px;">
+  </div>
+
+  <div class="exercise">
+    <h2>Superman hold</h2>
+    <p>Contracción isométrica que fortalece la zona lumbar y glúteos.</p>
+    <ul>
+      <li>3 series de 30 segundos</li>
+      <li>Intensidad: Media</li>
+      <li>Beneficios: Mejora resistencia de la espalda baja</li>
+    </ul>
+    <img src="{% static 'images/superman-hold.jpg' %}" alt="Superman hold" style="width: 100%; border-radius: 8px; margin-top: 10px;">
+  </div>
+
+  <div class="exercise">
+    <h2>Pull-ups asistidas</h2>
+    <p>Ideal para trabajar dorsales sin cargar todo el peso corporal.</p>
+    <ul>
+      <li>3 series de 8-10 repeticiones</li>
+      <li>Intensidad: Media</li>
+      <li>Beneficios: Mejora fuerza funcional en espalda y brazos</li>
+    </ul>
+    <img src="{% static 'images/pullup-banda.jpg' %}" alt="Pull-ups asistidas" style="width: 100%; border-radius: 8px; margin-top: 10px;">
+  </div>
+
+  <div class="exercise">
+    <h2>Reverse flys con mancuernas</h2>
+    <p>Trabaja los deltoides posteriores y parte superior de la espalda.</p>
+    <ul>
+      <li>3 series de 12-15 repeticiones</li>
+      <li>Intensidad: Media</li>
+      <li>Beneficios: Mejora la postura y previene lesiones</li>
+    </ul>
+    <img src="{% static 'images/reverse-flys.jpg' %}" alt="Reverse flys" style="width: 100%; border-radius: 8px; margin-top: 10px;">
+  </div>
+
+  <div class="exercise">
+    <h2>Bird-Dog con pausa</h2>
+    <p>Ejercicio de control motor que fortalece la espalda y el core.</p>
+    <ul>
+      <li>3 series de 10 repeticiones (por lado)</li>
+      <li>Intensidad: Media</li>
+      <li>Beneficios: Estabilidad lumbar y coordinación</li>
+    </ul>
+    <img src="{% static 'images/bird-dog.jpg' %}" alt="Bird Dog" style="width: 100%; border-radius: 8px; margin-top: 10px;">
+  </div>
+
+  <div class="exercise">
+    <h2>Plancha lateral con rotación</h2>
+    <p>Ejercicio combinado que fortalece el core y estabiliza la columna.</p>
+    <ul>
+      <li>3 series de 10 repeticiones por lado</li>
+      <li>Intensidad: Media</li>
+      <li>Beneficios: Mejora el equilibrio y la fuerza de oblicuos y espalda</li>
+    </ul>
+    <img src="{% static 'images/plancha-rotacion.jpg' %}" alt="Plancha rotación" style="width: 100%; border-radius: 8px; margin-top: 10px;">
+  </div>
+</div>
+
+</body>
+</html>

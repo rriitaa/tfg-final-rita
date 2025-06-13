@@ -1,0 +1,235 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Ejercicios Fuerza - Nivel Medio</title>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap" rel="stylesheet">
+  <style>
+    html, body {
+      font-family: 'Poppins', sans-serif;
+      margin: 0;
+      padding: 0;
+      background: url("{% static 'images/gym.jpg' %}") no-repeat center center fixed;
+      background-size: cover;
+      height: 100vh;
+    }
+
+    .background-header {
+      background: rgba(250,250,250,0.95);
+      height: 80px;
+      position: fixed;
+      top: 0;
+      left: 0;
+      right: 0;
+      box-shadow: 0px 0px 10px rgba(0,0,0,0.15);
+      z-index: 100;
+    }
+
+    .header-area {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 0 20px;
+      height: 100%;
+    }
+
+    .logo {
+      font-size: 32px;
+      font-weight: 800;
+      color: #232d39;
+      text-transform: uppercase;
+    }
+
+    .logo em {
+      font-style: normal;
+      color: #ed563b;
+    }
+
+    .navbar {
+      display: flex;
+      gap: 20px;
+    }
+
+    .navbar a {
+      text-decoration: none;
+      color: #232d39;
+      font-weight: 600;
+      font-size: 16px;
+    }
+
+    .navbar a:hover {
+      color: #ed563b;
+    }
+
+    .cardio-title {
+      text-align: center;
+      font-size: 40px;
+      color: #fff;
+      margin-top: -150px;
+      margin-bottom: 40px;
+    }
+
+    .cardio-exercises {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 20px;
+      padding: 20px;
+      justify-items: center;
+    }
+
+    .exercise {
+      background-color: rgba(255, 255, 255, 0.8);
+      padding: 20px;
+      border-radius: 10px;
+      box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+      text-align: center;
+      width: 100%;
+      max-width: 280px;
+    }
+
+    .exercise h2 {
+      font-size: 24px;
+      color: #232d39;
+      margin-bottom: 10px;
+    }
+
+    .exercise p {
+      font-size: 16px;
+      color: #555;
+      margin-bottom: 10px;
+    }
+
+    .exercise ul {
+      list-style: none;
+      padding: 0;
+      margin: 0;
+    }
+
+    .exercise li {
+      font-size: 14px;
+      color: #555;
+      margin-bottom: 5px;
+    }
+
+    .view-button {
+      background-color: #ed563b;
+      color: white;
+      padding: 10px 20px;
+      font-size: 16px;
+      text-decoration: none;
+      border-radius: 5px;
+      display: inline-block;
+      margin-top: 10px;
+    }
+
+    .view-button:hover {
+      background-color: #e94d30;
+    }
+
+    @media screen and (max-width: 768px) {
+      .cardio-exercises {
+        grid-template-columns: repeat(2, 1fr);
+      }
+    }
+
+    @media screen and (max-width: 480px) {
+      .cardio-exercises {
+        grid-template-columns: 1fr;
+      }
+    }
+  </style>
+</head>
+<body>
+
+<header class="background-header">
+  <div class="header-area">
+    <a href="{% url 'index' %}" class="logo">
+      RB <em>SMART FIT</em>
+    </a>
+    <nav class="navbar">
+      <a href="{% url 'home' %}">Inicio</a>
+      <a href="{% url 'ejercicios-comunidad' %}">Comunidad</a>
+      <a href="{% url 'categorias' %}">Categorias</a>
+      <a href="{% url 'listar_ejercicios' %}">Mis publicaciones</a>
+      <a href="{% url 'mi-perfil' %}">Mi Perfil</a>
+      <a href="{% url 'logout' %}">Salir</a>
+    </nav>
+  </div>
+</header>
+
+<div class="cardio-title">
+  <h1>Ejercicios Fuerza - Nivel Medio</h1>
+</div>
+
+<div class="cardio-exercises">
+  <div class="exercise">
+    <h2>Flexiones con palmada</h2>
+    <p>Una variante explosiva de las flexiones que mejora fuerza y coordinación en el tren superior.</p>
+    <ul>
+      <li>3 series de 10 repeticiones</li>
+      <li>Intensidad: Media-Alta</li>
+      <li>Beneficios: Potencia en pecho, tríceps y hombros</li>
+    </ul>
+    <img src="{% static 'images/flexion-palmada.jpg' %}" alt="Flexiones con palmada" style="width: 100%; border-radius: 8px; margin-top: 10px;">
+  </div>
+
+  <div class="exercise">
+    <h2>Sentadillas con salto</h2>
+    <p>Ejercicio pliométrico que desarrolla fuerza y explosividad en piernas y glúteos.</p>
+    <ul>
+      <li>3 series de 12 repeticiones</li>
+      <li>Intensidad: Alta</li>
+      <li>Beneficios: Mejora potencia y resistencia muscular</li>
+    </ul>
+    <img src="{% static 'images/jump-squats.jpg' %}" alt="Sentadillas con salto" style="width: 100%; border-radius: 8px; margin-top: 10px;">
+  </div>
+
+  <div class="exercise">
+    <h2>Plancha con toque de hombros</h2>
+    <p>Una variante dinámica de la plancha que fortalece el core y mejora estabilidad.</p>
+    <ul>
+      <li>3 series de 30 segundos</li>
+      <li>Intensidad: Media</li>
+      <li>Beneficios: Estabilidad central y coordinación</li>
+    </ul>
+    <img src="{% static 'images/shoulder-tap-plank.jpg' %}" alt="Plancha toque hombros" style="width: 100%; border-radius: 8px; margin-top: 10px;">
+  </div>
+
+  <div class="exercise">
+    <h2>Peso muerto con mancuernas</h2>
+    <p>Ejercicio completo para trabajar cadena posterior y estabilidad lumbar.</p>
+    <ul>
+      <li>3 series de 10-12 repeticiones</li>
+      <li>Intensidad: Media</li>
+      <li>Beneficios: Fortalece glúteos, isquios y espalda baja</li>
+    </ul>
+    <img src="{% static 'images/peso-muerto.jpg' %}" alt="Peso muerto" style="width: 100%; border-radius: 8px; margin-top: 10px;">
+  </div>
+
+  <div class="exercise">
+    <h2>Zancadas caminando</h2>
+    <p>Una variante dinámica de las zancadas que mejora equilibrio y fuerza funcional.</p>
+    <ul>
+      <li>3 series de 20 pasos (10 por pierna)</li>
+      <li>Intensidad: Media-Alta</li>
+      <li>Beneficios: Tonificación de piernas y glúteos</li>
+    </ul>
+    <img src="{% static 'images/zancadas-caminando.jpg' %}" alt="Zancadas caminando" style="width: 100%; border-radius: 8px; margin-top: 10px;">
+  </div>
+
+  <div class="exercise">
+    <h2>Sentadilla + Press con mancuernas</h2>
+    <p>Movimiento combinado que activa tren inferior y superior simultáneamente.</p>
+    <ul>
+      <li>3 series de 12 repeticiones</li>
+      <li>Intensidad: Media</li>
+      <li>Beneficios: Fuerza global, coordinación y gasto calórico</li>
+    </ul>
+    <img src="{% static 'images/sentadilla-press.jpg' %}" alt="Sentadilla Press" style="width: 100%; border-radius: 8px; margin-top: 10px;">
+  </div>
+</div>
+
+</body>
+</html>

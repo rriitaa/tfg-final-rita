@@ -26,14 +26,19 @@ urlpatterns = [
     path('editar-ejercicio/<int:id>/', views.editar_ejercicio, name='editar-ejercicio'),
     path('eliminar-ejercicio/<int:id>/', views.eliminar_ejercicio, name='eliminar-ejercicio'),
     path('mi_perfil/', views.my_profile, name='mi-perfil'),
-    # Nivel medio
-    path('categoria_gluteos/medio/', views.categoria_gluteos_medio, name='categoria_gluteos_medio'),
-    path('categoria_espalda/medio/', views.categoria_espalda_medio, name='categoria_espalda_medio'),
-    path('categoria_fuerza/medio/', views.categoria_fuerza_medio, name='categoria_fuerza_medio'),
-    # Nivel avanzado
-    path('categoria_gluteos/avanzado/', views.categoria_gluteos_avanzado, name='categoria_gluteos_avanzado'),
-    path('categoria_espalda/avanzado/', views.categoria_espalda_avanzado, name='categoria_espalda_avanzado'),
-    path('categoria_fuerza/avanzado/', views.categoria_fuerza_avanzado, name='categoria_fuerza_avanzado'),
-
     
+    # Nivel medio
+    path('categoria_gluteo_medio/', views.ejercicios_gluteo_medio, name='categoria_gluteo_medio'),
+    path('categoria_espalda_medio/', views.ejercicios_espalda_medio, name='categoria_espalda_medio'),
+    path('categoria_fuerza_medio/', views.ejercicios_fuerza_medio, name='categoria_fuerza_medio'),
+    path('categoria_cardio_medio/', views.ejercicios_cardio_medio, name='categoria_cardio_medio'),
+    path('categoria_flexibilidad_medio/', views.ejercicios_flexibilidad_medio, name='categoria_flexibilidad_medio'),
+
+    # Nivel avanzado
+    path('categoria_gluteo_alto/', views.ejercicios_gluteo_alto, name='categoria_gluteo_alto'),
+    path('categoria_espalda_alto/', views.ejercicios_espalda_alto, name='categoria_espalda_alto'),
+    path('categoria_fuerza_alto/', views.ejercicios_fuerza_alto, name='categoria_fuerza_alto'),
+    path('categoria_cardio_alto/', views.ejercicios_cardio_alto, name='categoria_cardio_alto'),
+    path('categoria_flexibilidad_alto/', views.ejercicios_flexibilidad_alto, name='categoria_flexibilidad_alto'),
+
 ]

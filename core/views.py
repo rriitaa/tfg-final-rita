@@ -63,6 +63,40 @@ def categoria_gluteos(request):
 def categoria_espalda(request):
     return render(request, "core/ejercicios_espalda.html")
 
+
+
+def ejercicios_gluteo_medio(request):
+    return render(request, 'core/categoria_gluteo_medio.html')
+
+def ejercicios_fuerza_medio(request):
+    return render(request, 'core/categoria_fuerza_medio.html')
+
+def ejercicios_espalda_medio(request):
+    return render(request, 'core/categoria_espalda_medio.html')
+
+def ejercicios_cardio_medio(request):
+    return render(request, 'core/categoria_cardio_medio.html')
+
+def ejercicios_flexibilidad_medio(request):
+    return render(request, 'core/categoria_flexibilidad_medio.html')
+
+def ejercicios_gluteo_alto(request):
+    return render(request, 'core/categoria_gluteo_alto.html')
+
+def ejercicios_fuerza_alto(request):
+    return render(request, 'core/categoria_fuerza_alto.html')
+
+def ejercicios_espalda_alto(request):
+    return render(request, 'core/categoria_espalda_alto.html')
+
+def ejercicios_cardio_alto(request):
+    return render(request, 'core/categoria_cardio_alto.html')
+
+def ejercicios_flexibilidad_alto(request):
+    return render(request, 'core/categoria_flexibilidad_alto.html')
+
+
+
 def registrar(request):
     if request.method == 'POST':
         form = UserRegisterForm(request.POST)
