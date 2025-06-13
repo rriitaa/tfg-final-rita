@@ -141,18 +141,17 @@
     }
 
     .orange-box {
-  font-size: 24px;
-  font-weight: 600;
-  margin: 0 auto 40px auto;
-  color: #ffffff;
-  background-color: rgba(237, 86, 59, 0.5);
-  display: block;
-  text-align: center;
-  width: 28%;
-  padding: 10px;
-  border-radius: 8px;
-}
-
+      font-size: 24px;
+      font-weight: 600;
+      margin: 0 auto 40px auto;
+      color: #ffffff;
+      background-color: rgba(237, 86, 59, 0.5);
+      display: block;
+      text-align: center;
+      width: 28%;
+      padding: 10px;
+      border-radius: 8px;
+    }
   </style>
 </head>
 <body>
@@ -177,55 +176,80 @@
   <div class="main-content">
     <h1 class="orange-box">Comienza tu entreno</h1>
 
-    
-
     <div class="white-box">
       <h2>¿Qué estás buscando hacer hoy?</h2>
 
-      <!-- Filtro de categorías -->
+      <!-- Filtros -->
       <div class="category-filter">
         <label for="category">Selecciona una categoría:</label>
         <select id="category" name="category">
-          <option value="fuerza">Ejercicios de fuerza (Strength, Box)</option>
+          <option value="fuerza">Fuerza (Strength, Box)</option>
           <option value="cardio">Cardio (Correr, Ciclismo)</option>
           <option value="flexibilidad">Flexibilidad (Yoga, Estiramientos)</option>
           <option value="gluteos">Glúteos y pierna</option>
           <option value="espalda">Espalda sana</option>
         </select>
+
+        <label for="nivel">Selecciona el nivel:</label>
+        <select id="nivel" name="nivel">
+          <option value="bajo">Bajo</option>
+          <option value="medio">Medio</option>
+          <option value="avanzado">Avanzado</option>
+        </select>
       </div>
 
-      <!-- Botón de inicio -->
       <a href="#" class="start-button">Comenzar entrenamiento</a>
     </div>
   </div>
 
   <script>
-  document.addEventListener('DOMContentLoaded', function () {
-    const boton = document.querySelector('.start-button');
-    const select = document.getElementById('category');
+    document.addEventListener('DOMContentLoaded', function () {
+      const boton = document.querySelector('.start-button');
+      const categoria = document.getElementById('category');
+      const nivel = document.getElementById('nivel');
 
-    boton.addEventListener('click', function (e) {
-      e.preventDefault(); // Evita que el <a> actúe como enlace por defecto
+      boton.addEventListener('click', function (e) {
+        e.preventDefault();
 
-      const categoria = select.value;
+        const cat = categoria.value;
+        const niv = nivel.value;
 
-      // Mapeo de rutas según categoría
-      const rutas = {
-        fuerza: '{% url "categoria_fuerza" %}',
-        cardio: '{% url "categoria_cardio" %}',
-        flexibilidad: '{%url "categoria_flexibilidad" %}',
-        gluteos: '{%url "categoria_gluteos" %}',
-        espalda: '{%url "categoria_espalda" %}',
-      };
+        const rutas = {
+          fuerza: {
+            bajo: '{% url "categoria_fuerza" %}',
+            medio: '/categoria_fuerza_medio/',
+            avanzado: '/categoria_fuerza_avanzado/'
+          },
+          cardio: {
+            bajo: '{% url "categoria_cardio" %}',
+            medio: '/categoria_cardio_medio/',
+            avanzado: '/categoria_cardio_avanzado/'
+          },
+          flexibilidad: {
+            bajo: '{% url "categoria_flexibilidad" %}',
+            medio: '/categoria_flexibilidad_medio/',
+            avanzado: '/categoria_flexibilidad_avanzado/'
+          },
+          gluteos: {
+            bajo: '{% url "categoria_gluteos" %}',
+            medio: '/categoria_gluteos_medio/',
+            avanzado: '/categoria_gluteos_avanzado/'
+          },
+          espalda: {
+            bajo: '{% url "categoria_espalda" %}',
+            medio: '/categoria_espalda_medio/',
+            avanzado: '/categoria_espalda_avanzado/'
+          }
+        };
 
-      if (rutas[categoria]) {
-        window.location.href = rutas[categoria];
-      } else {
-        alert("Categoría no válida.");
-      }
+        if (rutas[cat] && rutas[cat][niv]) {
+          window.location.href = rutas[cat][niv];
+        } else {
+          alert("Ruta no disponible.");
+        }
+      });
     });
-  });
-</script>
+  </script>
 
 </body>
 </html>

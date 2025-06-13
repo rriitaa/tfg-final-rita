@@ -1,3 +1,5 @@
+READ ME BUENOOOOOOOOOO
+
 
 # GymAPP
 
@@ -189,5 +191,4 @@ GymAI/
 │   ├── settings.py
 │   ├── urls.py
 ```
-
 

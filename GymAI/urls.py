@@ -26,6 +26,14 @@ urlpatterns = [
     path('editar-ejercicio/<int:id>/', views.editar_ejercicio, name='editar-ejercicio'),
     path('eliminar-ejercicio/<int:id>/', views.eliminar_ejercicio, name='eliminar-ejercicio'),
     path('mi_perfil/', views.my_profile, name='mi-perfil'),
+    # Nivel medio
+    path('categoria_gluteos/medio/', views.categoria_gluteos_medio, name='categoria_gluteos_medio'),
+    path('categoria_espalda/medio/', views.categoria_espalda_medio, name='categoria_espalda_medio'),
+    path('categoria_fuerza/medio/', views.categoria_fuerza_medio, name='categoria_fuerza_medio'),
+    # Nivel avanzado
+    path('categoria_gluteos/avanzado/', views.categoria_gluteos_avanzado, name='categoria_gluteos_avanzado'),
+    path('categoria_espalda/avanzado/', views.categoria_espalda_avanzado, name='categoria_espalda_avanzado'),
+    path('categoria_fuerza/avanzado/', views.categoria_fuerza_avanzado, name='categoria_fuerza_avanzado'),
 
     
 ]
