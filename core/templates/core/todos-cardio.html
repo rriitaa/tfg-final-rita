@@ -1,0 +1,401 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Ejercicios de Fuerza</title>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap" rel="stylesheet" />
+  <style>
+    html, body {
+      font-family: 'Poppins', sans-serif;
+      margin: 0;
+      padding: 0;
+      background: url("{% static 'images/gym.jpg' %}") no-repeat center center fixed;
+      background-size: cover;
+      height: 100vh;
+    }
+
+    .background-header {
+      background: rgba(250,250,250,0.95);
+      height: 80px;
+      position: fixed;
+      top: 0;
+      left: 0;
+      right: 0;
+      box-shadow: 0px 0px 10px rgba(0,0,0,0.15);
+      z-index: 100;
+    }
+
+    .header-area {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 0 20px;
+      height: 100%;
+    }
+
+    .logo {
+      font-size: 32px;
+      font-weight: 800;
+      color: #232d39;
+      text-transform: uppercase;
+    }
+
+    .main-content {
+      padding-top: 120px; /* Para no tapar el header */
+      color: #fff;
+      text-align: center;
+    }
+
+    .main-content h1 {
+      font-size: 36px;
+      margin-bottom: 40px;
+    }
+
+    .logo em {
+      font-style: normal;
+      color: #ed563b;
+    }
+
+    .navbar {
+      display: flex;
+      gap: 20px;
+    }
+
+    .navbar a {
+      text-decoration: none;
+      color: #232d39;
+      font-weight: 600;
+      font-size: 16px;
+    }
+
+    .navbar a:hover {
+      color: #ed563b;
+    }
+
+    .strength-title {
+      text-align: center;
+      font-size: 40px;
+      color: #fff;
+      margin-top: -150px;
+      margin-bottom: 40px;
+    }
+
+    .strength-exercises {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 20px;
+      padding: 20px;
+      justify-items: center;
+    }
+
+    .exercise {
+      background-color: rgba(255, 255, 255, 0.8);
+      padding: 20px;
+      border-radius: 10px;
+      box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+      text-align: center;
+      width: 100%;
+      max-width: 280px;
+    }
+
+    .exercise h2 {
+      font-size: 24px;
+      color: #232d39;
+      margin-bottom: 10px;
+    }
+
+    .exercise p {
+      font-size: 16px;
+      color: #555;
+      margin-bottom: 10px;
+    }
+
+    .exercise ul {
+      list-style: none;
+      padding: 0;
+      margin: 0;
+    }
+
+    .exercise li {
+      font-size: 14px;
+      color: #555;
+      margin-bottom: 5px;
+    }
+
+    .view-button {
+      background-color: #ed563b;
+      color: white;
+      padding: 10px 20px;
+      font-size: 16px;
+      text-decoration: none;
+      border-radius: 5px;
+      display: inline-block;
+      margin-top: 10px;
+    }
+
+    .view-button:hover {
+      background-color: #e94d30;
+    }
+    .orange-box {
+  font-size: 24px;
+  font-weight: 600;
+  margin: 0 auto 40px auto;
+  color: #ffffff;
+  background-color: rgba(237, 86, 59, 0.784);
+  display: block;
+  text-align: center;
+  width: 45%;
+  padding: 10px;
+  border-radius: 8px;
+}
+
+    @media screen and (max-width: 768px) {
+      .strength-exercises {
+        grid-template-columns: repeat(2, 1fr);
+      }
+    }
+
+    @media screen and (max-width: 480px) {
+      .strength-exercises {
+        grid-template-columns: 1fr;
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- Header -->
+  <header class="background-header">
+    <div class="header-area">
+      <a href="{% url 'index' %}" class="logo">
+        RB <em>SMART FIT</em>
+      </a>
+      <nav class="navbar">
+        <a href="{% url 'home' %}">Inicio</a>
+        <a href="{% url 'ejercicios-comunidad' %}">Comunidad</a>
+        <a href="{% url 'categorias' %}">Categorias</a>
+        <a href="{% url 'listar_ejercicios' %}">Mis publicaciones</a>
+        <a href="{% url 'mi-perfil' %}">Mi Perfil</a>
+        <a href="{% url 'logout' %}">Salir</a>
+      </nav>
+    </div>
+  </header>
+
+  <!-- Main Content -->
+
+<div class="main-content"></div>
+<h1 class="orange-box">TODOS LOS EJERCICIOS DE CARDIO DISPONIBLES</h1>
+
+  <div class="strength-exercises">
+  <!-- Ejercicio 1 -->
+  <div class="exercise">
+    <h2>Correr</h2>
+    <p>El running es uno de los mejores ejercicios para mejorar la resistencia cardiovascular. Puedes hacerlo en exterior o en cinta.</p>
+    <ul>
+      <li>Duración: 30 minutos</li>
+      <li>Intensidad: Alta</li>
+      <li>Beneficios: Mejora la circulación y quema calorías</li>
+    </ul>
+    <img src="{% static 'images/correr.jpg' %}" alt="Correr" style="width: 100%; border-radius: 8px; margin-top: 10px;">
+  </div>
+
+  <!-- Ejercicio 2 -->
+  <div class="exercise">
+    <h2>Jumping Jacks</h2>
+    <p>Este ejercicio es excelente para mejorar la coordinación y la agilidad. Se realiza en intervalos cortos y rápidos.</p>
+    <ul>
+      <li>Duración: 3 series de 20 repeticiones</li>
+      <li>Intensidad: Media-Alta</li>
+      <li>Beneficios: Aumenta la frecuencia cardíaca y mejora la resistencia</li>
+    </ul>
+    <img src="{% static 'images/jumping-jacks.jpg' %}" alt="Jumping Jacks" style="width: 100%; border-radius: 8px; margin-top: 10px;">
+  </div>
+
+  <!-- Ejercicio 3 -->
+  <div class="exercise">
+    <h2>Salto de cuerda</h2>
+    <p>Saltando la cuerda se logran mejorar tanto la resistencia cardiovascular como la tonificación muscular.</p>
+    <ul>
+      <li>Duración: 15-20 minutos</li>
+      <li>Intensidad: Alta</li>
+      <li>Beneficios: Mejora la coordinación y la salud cardiovascular</li>
+    </ul>
+    <img src="{% static 'images/salto-cuerda.jpg' %}" alt="Salto de cuerda" style="width: 100%; border-radius: 8px; margin-top: 10px;">
+  </div>
+
+  <!-- Ejercicio 4 -->
+  <div class="exercise">
+    <h2>Burpees</h2>
+    <p>Un ejercicio completo que activa el cuerpo entero, excelente para quemar calorías rápidamente.</p>
+    <ul>
+      <li>Duración: 4 series de 10 repeticiones</li>
+      <li>Intensidad: Muy alta</li>
+      <li>Beneficios: Aumenta la resistencia y trabaja fuerza explosiva</li>
+    </ul>
+    <img src="{% static 'images/burpees.jpg' %}" alt="Burpees" style="width: 100%; border-radius: 8px; margin-top: 10px;">
+  </div>
+
+  <!-- Ejercicio 5 -->
+  <div class="exercise">
+    <h2>Mountain Climbers verticales</h2>
+    <p>Ejercicio que simula escalar, ideal para quemar grasa y trabajar core, brazos y piernas al mismo tiempo.</p>
+    <ul>
+      <li>Duración: 3 series de 30 segundos</li>
+      <li>Intensidad: Alta</li>
+      <li>Beneficios: Quema grasa, mejora resistencia y coordinación</li>
+    </ul>
+    <img src="{% static 'images/mountain-vertical.jpg' %}" alt="Mountain Climbers" style="width: 100%; border-radius: 8px; margin-top: 10px;">
+  </div>
+
+  <!-- Ejercicio 6 -->
+  <div class="exercise">
+  <h2>Subir escaleras</h2>
+  <p>Ejercicio cardiovascular intenso que mejora la resistencia y fortalece el tren inferior utilizando el propio peso corporal.</p>
+  <ul>
+    <li>Duración: 15 minutos continuos o 5 series de 3 minutos</li>
+    <li>Intensidad: Alta</li>
+    <li>Beneficios: Mejora la capacidad pulmonar, tonifica piernas y glúteos, y quema calorías rápidamente</li>
+  </ul>
+  <img src="{% static 'images/escaleras.jpg' %}" alt="Subir escaleras" style="width: 100%; border-radius: 8px; margin-top: 10px;">
+</div>
+
+ <div class="exercise">
+    <h2>Burpees</h2>
+    <p>Ejercicio completo que combina salto y despliegue corporal para cardio intenso.</p>
+    <ul>
+      <li>3 series de 10 repeticiones</li>
+      <li>Intensidad: Alta</li>
+      <li>Beneficios: Aumenta resistencia y quema grasa</li>
+    </ul>
+    <img src="{% static 'images/burpees.jpg' %}" alt="Burpees" style="width: 100%; border-radius: 8px; margin-top: 10px;">
+  </div>
+
+  <div class="exercise">
+    <h2>Skaters laterales</h2>
+    <p>Salto lateral continuo que mejora agilidad, coordinación y resistencia.</p>
+    <ul>
+      <li>3 series de 30 segundos</li>
+      <li>Intensidad: Media-Alta</li>
+      <li>Beneficios: Agilidad lateral y cardio efectivo</li>
+    </ul>
+    <img src="{% static 'images/skaters.jpg' %}" alt="Skaters laterales" style="width: 100%; border-radius: 8px; margin-top: 10px;">
+  </div>
+
+  <div class="exercise">
+    <h2>Mountain Climbers</h2>
+    <p>Ejercicio dinámico en posición de plancha que trabaja el core y cardio al mismo tiempo.</p>
+    <ul>
+      <li>3 series de 40 segundos</li>
+      <li>Intensidad: Alta</li>
+      <li>Beneficios: Cardio rápido + abdomen activo</li>
+    </ul>
+    <img src="{% static 'images/mountain.jpg' %}" alt="Mountain Climbers" style="width: 100%; border-radius: 8px; margin-top: 10px;">
+  </div>
+
+  <div class="exercise">
+    <h2>Ciclismo Indoor</h2>
+    <p>Ideal para cardio controlado con bajo impacto en articulaciones.</p>
+    <ul>
+      <li>Sesión de 20-30 minutos</li>
+      <li>Intensidad: Media</li>
+      <li>Beneficios: Mejora capacidad aeróbica</li>
+    </ul>
+    <img src="{% static 'images/ciclismo.jpg' %}" alt="Ciclismo Indoor" style="width: 100%; border-radius: 8px; margin-top: 10px;">
+  </div>
+
+  <div class="exercise">
+    <h2>Saltos de tijera</h2>
+    <p>Ejercicio rítmico de salto con brazos y piernas en oposición para cardio completo.</p>
+    <ul>
+      <li>3 series de 45 segundos</li>
+      <li>Intensidad: Media</li>
+      <li>Beneficios: Resistencia y coordinación</li>
+    </ul>
+    <img src="{% static 'images/jumping-jacks.jpg' %}" alt="Saltos de tijera" style="width: 100%; border-radius: 8px; margin-top: 10px;">
+  </div>
+
+  <div class="exercise">
+    <h2>High Knees</h2>
+    <p>Ejercicio rápido que eleva el ritmo cardíaco y trabaja abdomen inferior y piernas.</p>
+    <ul>
+      <li>3 series de 30 segundos</li>
+      <li>Intensidad: Media-Alta</li>
+      <li>Beneficios: Cardio explosivo y tonificación</li>
+    </ul>
+    <img src="{% static 'images/high-knees.jpg' %}" alt="High Knees" style="width: 100%; border-radius: 8px; margin-top: 10px;">
+  </div>
+
+  <div class="exercise">
+    <h2>Sprint en cinta o exterior</h2>
+    <p>Carrera a máxima velocidad en intervalos breves para quemar grasa y mejorar potencia cardiovascular.</p>
+    <ul>
+      <li>6-8 sprints de 20 segundos</li>
+      <li>Intensidad: Muy Alta</li>
+      <li>Beneficios: Explosividad y VO2 max</li>
+    </ul>
+    <img src="{% static 'images/correr.jpg' %}" alt="Sprint" style="width: 100%; border-radius: 8px; margin-top: 10px;">
+  </div>
+
+  <div class="exercise">
+    <h2>Burpees con push-up</h2>
+    <p>Versión completa que incluye flexión de pecho. Requiere fuerza, coordinación y resistencia.</p>
+    <ul>
+      <li>3-4 series de 10-15 repeticiones</li>
+      <li>Intensidad: Muy Alta</li>
+      <li>Beneficios: Cardio + fuerza total</li>
+    </ul>
+    <img src="{% static 'images/burpees.jpg' %}" alt="Burpee con push-up" style="width: 100%; border-radius: 8px; margin-top: 10px;">
+  </div>
+
+  <div class="exercise">
+    <h2>High Knees con resistencia</h2>
+    <p>Elevaciones rápidas de rodillas con banda elástica o lastre para mayor intensidad.</p>
+    <ul>
+      <li>4 series de 30 segundos</li>
+      <li>Intensidad: Alta</li>
+      <li>Beneficios: Aumenta resistencia y tono abdominal</li>
+    </ul>
+    <img src="{% static 'images/high-knees.jpg' %}" alt="High Knees con resistencia" style="width: 100%; border-radius: 8px; margin-top: 10px;">
+  </div>
+
+  <div class="exercise">
+  <h2>Belt Kicks</h2>
+  <p>Ejercicio de cardio dinámico que combina patadas con resistencia usando una banda elástica. Mejora la potencia y estabilidad.</p>
+  <ul>
+    <li>5 series de 30 segundos por pierna</li>
+    <li>Intensidad: Alta</li>
+    <li>Beneficios: Refuerza piernas, core y mejora la resistencia</li>
+  </ul>
+  <img src="{% static 'images/belt-kicks.jpg' %}" alt="Belt kicks" style="width: 100%; border-radius: 8px; margin-top: 10px;">
+</div>
+
+
+  <div class="exercise">
+    <h2>Tuck jumps</h2>
+    <p>Saltos verticales llevando rodillas al pecho. Ejercicio pliométrico intenso.</p>
+    <ul>
+      <li>3 series de 8-10 repeticiones</li>
+      <li>Intensidad: Muy Alta</li>
+      <li>Beneficios: Potencia y explosividad</li>
+    </ul>
+    <img src="{% static 'images/tuck-jump.jpg' %}" alt="Tuck jumps" style="width: 100%; border-radius: 8px; margin-top: 10px;">
+  </div>
+
+  <div class="exercise">
+    <h2>Escaladores cruzados</h2>
+    <p>Mountain climbers con rotación que trabajan abdominales oblicuos y aumentan el ritmo cardíaco.</p>
+    <ul>
+      <li>3 series de 40 segundos</li>
+      <li>Intensidad: Alta</li>
+      <li>Beneficios: Cardio + core</li>
+    </ul>
+    <img src="{% static 'images/mountain.jpg' %}" alt="Escaladores cruzados" style="width: 100%; border-radius: 8px; margin-top: 10px;">
+  </div>
+</div>
+
+    
+  </div>
+</body>
+</html>
