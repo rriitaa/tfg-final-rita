@@ -96,19 +96,19 @@ def ejercicios_flexibilidad_alto(request):
     return render(request, 'core/categoria_flexibilidad_alto.html')
 
 def todos_fuerza(request):
-    return render(request, 'todos-fuerza.html')
+    return render(request, 'core/todos-fuerza.html')
 
 def todos_cardio(request):
-    return render(request, 'todos-cardio.html')
+    return render(request, 'core/todos-cardio.html')
 
 def todos_flex(request):
-    return render(request, 'todos-flex.html')
+    return render(request, 'core/todos-flex.html')
 
 def todos_gluteos(request):
-    return render(request, 'todos-gluteos.html')
+    return render(request, 'core/todos-gluteos.html')
 
 def todos_espalda(request):
-    return render(request, 'todos-espalda.html')
+    return render(request, 'core/todos-espalda.html')
 
 
 
