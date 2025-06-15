@@ -41,4 +41,9 @@ urlpatterns = [
     path('categoria_cardio_alto/', views.ejercicios_cardio_alto, name='categoria_cardio_alto'),
     path('categoria_flexibilidad_alto/', views.ejercicios_flexibilidad_alto, name='categoria_flexibilidad_alto'),
 
+    path('todos-fuerza/', views.todos_fuerza, name='todos-fuerza'),
+    path('todos-cardio/', views.todos_cardio, name='todos-cardio'),
+    path('todos-flex/', views.todos_flex, name='todos-flex'),
+    path('todos-gluteos/', views.todos_gluteos, name='todos-gluteos'),
+    path('todos-espalda/', views.todos_espalda, name='todos-espalda'),
 ]

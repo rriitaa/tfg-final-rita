@@ -95,6 +95,21 @@ def ejercicios_cardio_alto(request):
 def ejercicios_flexibilidad_alto(request):
     return render(request, 'core/categoria_flexibilidad_alto.html')
 
+def todos_fuerza(request):
+    return render(request, 'todos-fuerza.html')
+
+def todos_cardio(request):
+    return render(request, 'todos-cardio.html')
+
+def todos_flex(request):
+    return render(request, 'todos-flex.html')
+
+def todos_gluteos(request):
+    return render(request, 'todos-gluteos.html')
+
+def todos_espalda(request):
+    return render(request, 'todos-espalda.html')
+
 
 
 def registrar(request):
