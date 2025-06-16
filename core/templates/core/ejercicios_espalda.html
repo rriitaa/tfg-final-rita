@@ -131,6 +131,57 @@
       background-color: #e94d30;
     }
 
+    .exercise {
+  perspective: 1000px; /* Necesario para el 3D flip */
+}
+
+.flip-card-inner {
+  position: relative;
+  width: 100%;
+  max-width: 280px;
+  height: 250px;
+  
+  aspect-ratio: 4 / 3;
+  text-align: center;
+  transition: transform 0.6s;
+  transform-style: preserve-3d;
+  margin: 0 auto;
+  border-radius: 8px;
+}
+
+.exercise:hover .flip-card-inner {
+  transform: rotateY(180deg);
+}
+
+.flip-card-front, .flip-card-back {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  backface-visibility: hidden;
+  border-radius: 8px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.flip-card-front img {
+  width: 100%;
+  height: auto;
+  object-fit: cover;
+  border-radius: 8px;
+  object-fit: cover;
+}
+
+.flip-card-back {
+  background-color: #ed563bdc;
+  color: white;
+  font-size: 24px;
+  transform: rotateY(180deg);
+  padding: 20px;
+  box-sizing: border-box;
+  font-weight: 700;
+}
+
     /* Responsividad */
     @media screen and (max-width: 768px) {
       .cardio-exercises {
@@ -175,65 +226,108 @@
       <h2>Remo con barra</h2>
       <p>El remo con barra trabaja la parte superior de la espalda, ayudando a mejorar la postura y fuerza.</p>
       <ul>
-        <li>Duración: 4 series de 12 repeticiones</li>
-        <li>Intensidad: Alta</li>
+        <li>Duración: 2 series de 5 repeticiones</li>
+        <li>Intensidad: Baja</li>
         <li>Beneficios: Fortalece los músculos de la espalda</li>
       </ul>
+      <div class="flip-card-inner">
+      <div class="flip-card-front">
       <img src="{% static 'images/remo.jpg' %}" alt="Remo con barra" style="width: 100%; height: auto; border-radius: 8px; margin-top: 10px;">
     </div>
+      <div class="flip-card-back">
+        🚀🔥💪🏻 50 kcal quemadas aprox
+      </div>
+    </div>
+  </div>
 
     <div class="exercise">
       <h2>Pull-ups</h2>
       <p>Las pull-ups son un ejercicio avanzado que trabaja los músculos dorsales de la espalda.</p>
       <ul>
-        <li>Duración: 4 series de 10 repeticiones</li>
-        <li>Intensidad: Alta</li>
+        <li>Duración: 2 series de 3 repeticiones</li>
+        <li>Intensidad: Baja</li>
         <li>Beneficios: Fortalece la parte superior de la espalda y los hombros</li>
       </ul>
+      <div class="flip-card-inner">
+      <div class="flip-card-front">
       <img src="{% static 'images/pull-ups.jpg' %}" alt="Pull-ups" style="width: 100%; height: auto; border-radius: 8px; margin-top: 10px;">
     </div>
+      <div class="flip-card-back">
+        🚀🔥💪🏻 75 kcal quemadas aprox
+      </div>
+    </div>
+  </div>
 
     <div class="exercise">
       <h2>Hiperextensiones</h2>
       <p>Las hiperextensiones son ideales para trabajar la parte baja de la espalda y prevenir dolores lumbares.</p>
       <ul>
-        <li>Duración: 3 series de 15 repeticiones</li>
-        <li>Intensidad: Media</li>
+        <li>Duración: 3 series de 5 repeticiones</li>
+        <li>Intensidad: Baja</li>
         <li>Beneficios: Mejora la postura y fortalece la espalda baja</li>
       </ul>
+      <div class="flip-card-inner">
+      <div class="flip-card-front">
       <img src="{% static 'images/hiperextensiones.jpg' %}" alt="Hiperextensiones" style="width: 100%; height: auto; border-radius: 8px; margin-top: 10px;">
     </div>
+      <div class="flip-card-back">
+        🚀🔥💪🏻 50 kcal quemadas aprox
+      </div>
+    </div>
+  </div>
+
     <div class="exercise">
     <h2>Remo con mancuernas</h2>
     <p>Remo unilateral para mayor control, equilibrio y activación del core.</p>
     <ul>
-      <li>3 series de 12 repeticiones por brazo</li>
-      <li>Intensidad: Media-Alta</li>
+      <li>3 series de 5 repeticiones por brazo</li>
+      <li>Intensidad: Baja</li>
       <li>Beneficios: Mejora simetría y fuerza en espalda</li>
     </ul>
+    <div class="flip-card-inner">
+      <div class="flip-card-front">
     <img src="{% static 'images/remo-mancuerna.jpg' %}" alt="Remo con mancuernas" style="width: 100%; border-radius: 8px; margin-top: 10px;">
+  </div>
+      <div class="flip-card-back">
+        🚀🔥💪🏻 40 kcal quemadas aprox
+      </div>
+    </div>
   </div>
 
   <div class="exercise">
     <h2>Peso muerto rumano</h2>
     <p>Foco en la cadena posterior, activa erectores espinales, glúteos e isquiosurales.</p>
     <ul>
-      <li>4 series de 10 repeticiones</li>
-      <li>Intensidad: Alta</li>
+      <li>3 series de 4 repeticiones</li>
+      <li>Intensidad: Baja</li>
       <li>Beneficios: Mejora fuerza y movilidad posterior</li>
     </ul>
+    <div class="flip-card-inner">
+      <div class="flip-card-front">
     <img src="{% static 'images/peso-muerto-pesado.jpg' %}" alt="Peso muerto rumano" style="width: 100%; border-radius: 8px; margin-top: 10px;">
+  </div>
+      <div class="flip-card-back">
+        🚀🔥💪🏻 30 kcal quemadas aprox
+      </div>
+    </div>
   </div>
 
   <div class="exercise">
     <h2>Face pulls con banda</h2>
     <p>Ejercicio específico para trapecio medio y deltoides posteriores.</p>
     <ul>
-      <li>3 series de 15 repeticiones</li>
-      <li>Intensidad: Media</li>
+      <li>3 series de 5 repeticiones</li>
+      <li>Intensidad: Baja</li>
       <li>Beneficios: Corrige postura y fortalece parte superior</li>
     </ul>
+    <div class="flip-card-inner">
+      <div class="flip-card-front">
     <img src="{% static 'images/facepulls.jpg' %}" alt="Face pulls" style="width: 100%; border-radius: 8px; margin-top: 10px;">
+  </div>
+      <div class="flip-card-back">
+        🚀🔥💪🏻 50 kcal quemadas aprox
+      </div>
+    </div>
   </div>
   </div>
 </body>
