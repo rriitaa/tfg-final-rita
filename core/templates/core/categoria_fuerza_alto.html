@@ -128,6 +128,57 @@
       background-color: #e94d30;
     }
 
+    .exercise {
+  perspective: 1000px; /* Necesario para el 3D flip */
+}
+
+.flip-card-inner {
+  position: relative;
+  width: 100%;
+  max-width: 280px;
+  height: 250px;
+  
+  aspect-ratio: 4 / 3;
+  text-align: center;
+  transition: transform 0.6s;
+  transform-style: preserve-3d;
+  margin: 0 auto;
+  border-radius: 8px;
+}
+
+.exercise:hover .flip-card-inner {
+  transform: rotateY(180deg);
+}
+
+.flip-card-front, .flip-card-back {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  backface-visibility: hidden;
+  border-radius: 8px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.flip-card-front img {
+  width: 100%;
+  height: auto;
+  object-fit: cover;
+  border-radius: 8px;
+  object-fit: cover;
+}
+
+.flip-card-back {
+  background-color: #ed563bdc;
+  color: white;
+  font-size: 24px;
+  transform: rotateY(180deg);
+  padding: 20px;
+  box-sizing: border-box;
+  font-weight: 700;
+}
+
     @media screen and (max-width: 768px) {
       .cardio-exercises {
         grid-template-columns: repeat(2, 1fr);
@@ -173,7 +224,14 @@
       <li>Intensidad: Muy alta</li>
       <li>Beneficios: Fuerza unilateral, equilibrio y coordinación</li>
     </ul>
+    <div class="flip-card-inner">
+      <div class="flip-card-front">
     <img src="{% static 'images/flexion-una-mano.jpg' %}" alt="Flexiones a una mano" style="width: 100%; border-radius: 8px; margin-top: 10px;">
+  </div>
+      <div class="flip-card-back">
+        🚀🔥💪🏻 180 kcal quemadas aprox
+      </div>
+    </div>
   </div>
 
   <div class="exercise">
@@ -184,7 +242,14 @@
       <li>Intensidad: Muy alta</li>
       <li>Beneficios: Fuerza, potencia, estabilidad central</li>
     </ul>
+    <div class="flip-card-inner">
+      <div class="flip-card-front">
     <img src="{% static 'images/sentadilla-barra.jpg' %}" alt="Sentadillas con barra" style="width: 100%; border-radius: 8px; margin-top: 10px;">
+  </div>
+      <div class="flip-card-back">
+        🚀🔥💪🏻 120 kcal quemadas aprox
+      </div>
+    </div>
   </div>
 
   <div class="exercise">
@@ -192,10 +257,17 @@
     <p>Variante extrema para fortalecer core y estabilidad con gran demanda neuromuscular.</p>
     <ul>
       <li>4 series de 40 segundos</li>
-      <li>Intensidad: Muy alta</li>
+      <li>Intensidad: Alta </li>
       <li>Beneficios: Core, estabilidad y control corporal</li>
     </ul>
+    <div class="flip-card-inner">
+      <div class="flip-card-front">
     <img src="{% static 'images/plancha.jpg' %}" alt="Plancha elevación alterna" style="width: 100%; border-radius: 8px; margin-top: 10px;">
+  </div>
+      <div class="flip-card-back">
+        🚀🔥💪🏻 105 kcal quemadas aprox
+      </div>
+    </div>
   </div>
 
   <div class="exercise">
@@ -203,10 +275,17 @@
     <p>Ejercicio clave para fuerza máxima en cadena posterior y estabilidad lumbar.</p>
     <ul>
       <li>4 series de 6-8 repeticiones</li>
-      <li>Intensidad: Muy alta</li>
+      <li>Intensidad: Alta</li>
       <li>Beneficios: Fuerza global, potencia y resistencia</li>
     </ul>
+    <div class="flip-card-inner">
+      <div class="flip-card-front">
     <img src="{% static 'images/peso-muerto-pesado.jpg' %}" alt="Peso muerto pesado" style="width: 100%; border-radius: 8px; margin-top: 10px;">
+  </div>
+      <div class="flip-card-back">
+        🚀🔥💪🏻 100 kcal quemadas aprox
+      </div>
+    </div>
   </div>
 
   <div class="exercise">
@@ -214,10 +293,17 @@
     <p>Combinación avanzada para potencia, resistencia y explosividad en piernas.</p>
     <ul>
       <li>4 series de 12 saltos con peso moderado</li>
-      <li>Intensidad: Muy alta</li>
+      <li>Intensidad: Alta</li>
       <li>Beneficios: Fuerza explosiva, equilibrio y coordinación</li>
     </ul>
+    <div class="flip-card-inner">
+      <div class="flip-card-front">
     <img src="{% static 'images/zancadas-peso-salto.jpg' %}" alt="Zancadas con salto y peso" style="width: 100%; border-radius: 8px; margin-top: 10px;">
+  </div>
+      <div class="flip-card-back">
+        🚀🔥💪🏻 105 kcal quemadas aprox
+      </div>
+    </div>
   </div>
 
   <div class="exercise">
@@ -225,10 +311,17 @@
     <p>Ejercicio unilateral exigente para fuerza y estabilidad del tren inferior.</p>
     <ul>
       <li>4 series de 10-12 repeticiones por pierna</li>
-      <li>Intensidad: Muy alta</li>
+      <li>Intensidad: Alta</li>
       <li>Beneficios: Fuerza unilateral, balance y potencia</li>
     </ul>
+    <div class="flip-card-inner">
+      <div class="flip-card-front">
     <img src="{% static 'images/sentadilla-bulgara-pesada.jpg' %}" alt="Sentadilla búlgara con mancuernas" style="width: 100%; border-radius: 8px; margin-top: 10px;">
+  </div>
+      <div class="flip-card-back">
+        🚀🔥💪🏻 120 kcal quemadas aprox
+      </div>
+    </div>
   </div>
 
 </div>
