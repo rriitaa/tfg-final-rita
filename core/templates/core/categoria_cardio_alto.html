@@ -128,6 +128,57 @@
       background-color: #e94d30;
     }
 
+    .exercise {
+  perspective: 1000px; /* Necesario para el 3D flip */
+}
+
+.flip-card-inner {
+  position: relative;
+  width: 100%;
+  max-width: 280px;
+  height: 250px;
+  
+  aspect-ratio: 4 / 3;
+  text-align: center;
+  transition: transform 0.6s;
+  transform-style: preserve-3d;
+  margin: 0 auto;
+  border-radius: 8px;
+}
+
+.exercise:hover .flip-card-inner {
+  transform: rotateY(180deg);
+}
+
+.flip-card-front, .flip-card-back {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  backface-visibility: hidden;
+  border-radius: 8px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.flip-card-front img {
+  width: 100%;
+  height: auto;
+  object-fit: cover;
+  border-radius: 8px;
+  object-fit: cover;
+}
+
+.flip-card-back {
+  background-color: #ed563bdc;
+  color: white;
+  font-size: 24px;
+  transform: rotateY(180deg);
+  padding: 20px;
+  box-sizing: border-box;
+  font-weight: 700;
+}
+
     @media screen and (max-width: 768px) {
       .cardio-exercises {
         grid-template-columns: repeat(2, 1fr);
@@ -172,7 +223,14 @@
       <li>Intensidad: Muy Alta</li>
       <li>Beneficios: Explosividad y VO2 max</li>
     </ul>
+    <div class="flip-card-inner">
+      <div class="flip-card-front">
     <img src="{% static 'images/correr.jpg' %}" alt="Sprint" style="width: 100%; border-radius: 8px; margin-top: 10px;">
+  </div>
+      <div class="flip-card-back">
+        🚀🔥💪🏻 200 kcal quemadas aprox
+      </div>
+    </div>
   </div>
 
   <div class="exercise">
@@ -183,7 +241,14 @@
       <li>Intensidad: Muy Alta</li>
       <li>Beneficios: Cardio + fuerza total</li>
     </ul>
+    <div class="flip-card-inner">
+      <div class="flip-card-front">
     <img src="{% static 'images/burpees.jpg' %}" alt="Burpee con push-up" style="width: 100%; border-radius: 8px; margin-top: 10px;">
+  </div>
+      <div class="flip-card-back">
+        🚀🔥💪🏻 185 kcal quemadas aprox
+      </div>
+    </div>
   </div>
 
   <div class="exercise">
@@ -194,7 +259,14 @@
       <li>Intensidad: Alta</li>
       <li>Beneficios: Aumenta resistencia y tono abdominal</li>
     </ul>
+    <div class="flip-card-inner">
+      <div class="flip-card-front">
     <img src="{% static 'images/high-knees.jpg' %}" alt="High Knees con resistencia" style="width: 100%; border-radius: 8px; margin-top: 10px;">
+  </div>
+      <div class="flip-card-back">
+        🚀🔥💪🏻 200 kcal quemadas aprox
+      </div>
+    </div>
   </div>
 
   <div class="exercise">
@@ -205,8 +277,15 @@
     <li>Intensidad: Alta</li>
     <li>Beneficios: Refuerza piernas, core y mejora la resistencia</li>
   </ul>
+  <div class="flip-card-inner">
+      <div class="flip-card-front">
   <img src="{% static 'images/belt-kicks.jpg' %}" alt="Belt kicks" style="width: 100%; border-radius: 8px; margin-top: 10px;">
 </div>
+      <div class="flip-card-back">
+        🚀🔥💪🏻 170 kcal quemadas aprox
+      </div>
+    </div>
+  </div>
 
 
   <div class="exercise">
@@ -217,7 +296,14 @@
       <li>Intensidad: Muy Alta</li>
       <li>Beneficios: Potencia y explosividad</li>
     </ul>
+    <div class="flip-card-inner">
+      <div class="flip-card-front">
     <img src="{% static 'images/tuck-jump.jpg' %}" alt="Tuck jumps" style="width: 100%; border-radius: 8px; margin-top: 10px;">
+  </div>
+      <div class="flip-card-back">
+        🚀🔥💪🏻 150 kcal quemadas aprox
+      </div>
+    </div>
   </div>
 
   <div class="exercise">
@@ -228,7 +314,14 @@
       <li>Intensidad: Alta</li>
       <li>Beneficios: Cardio + core</li>
     </ul>
+    <div class="flip-card-inner">
+      <div class="flip-card-front">
     <img src="{% static 'images/mountain.jpg' %}" alt="Escaladores cruzados" style="width: 100%; border-radius: 8px; margin-top: 10px;">
+  </div>
+      <div class="flip-card-back">
+        🚀🔥💪🏻 120 kcal quemadas aprox
+      </div>
+    </div>
   </div>
 </div>
 
