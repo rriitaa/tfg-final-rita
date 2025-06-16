@@ -86,6 +86,7 @@
       box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
       text-align: center;
       width: 100%;
+      height: auto;
       max-width: 280px;
     }
 
@@ -127,6 +128,58 @@
     .view-button:hover {
       background-color: #e94d30;
     }
+    
+      .exercise {
+  perspective: 1000px; /* Necesario para el 3D flip */
+}
+
+.flip-card-inner {
+  position: relative;
+  width: 100%;
+  max-width: 280px;
+  height: 250px;
+  
+  aspect-ratio: 4 / 3;
+  text-align: center;
+  transition: transform 0.6s;
+  transform-style: preserve-3d;
+  margin: 0 auto;
+  border-radius: 8px;
+}
+
+.exercise:hover .flip-card-inner {
+  transform: rotateY(180deg);
+}
+
+.flip-card-front, .flip-card-back {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  backface-visibility: hidden;
+  border-radius: 8px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.flip-card-front img {
+  width: 100%;
+  height: auto;
+  object-fit: cover;
+  border-radius: 8px;
+  object-fit: cover;
+}
+
+.flip-card-back {
+  background-color: #ed563bdc;
+  color: white;
+  font-size: 24px;
+  transform: rotateY(180deg);
+  padding: 20px;
+  box-sizing: border-box;
+  font-weight: 700;
+}
+
 
     @media screen and (max-width: 768px) {
       .cardio-exercises {
@@ -172,8 +225,16 @@
       <li>Intensidad: Alta</li>
       <li>Beneficios: Aumenta resistencia y quema grasa</li>
     </ul>
+    <div class="flip-card-inner">
+      <div class="flip-card-front">
     <img src="{% static 'images/burpees.jpg' %}" alt="Burpees" style="width: 100%; border-radius: 8px; margin-top: 10px;">
   </div>
+      <div class="flip-card-back">
+        🚀🔥💪🏻 200 kcal quemadas aprox
+      </div>
+    </div>
+  </div>
+
 
   <div class="exercise">
     <h2>Skaters laterales</h2>
@@ -183,7 +244,14 @@
       <li>Intensidad: Media-Alta</li>
       <li>Beneficios: Agilidad lateral y cardio efectivo</li>
     </ul>
+    <div class="flip-card-inner">
+      <div class="flip-card-front">
     <img src="{% static 'images/skaters.jpg' %}" alt="Skaters laterales" style="width: 100%; border-radius: 8px; margin-top: 10px;">
+  </div>
+      <div class="flip-card-back">
+        🚀🔥💪🏻 200 kcal quemadas aprox
+      </div>
+    </div>
   </div>
 
   <div class="exercise">
@@ -194,7 +262,14 @@
       <li>Intensidad: Alta</li>
       <li>Beneficios: Cardio rápido + abdomen activo</li>
     </ul>
+    <div class="flip-card-inner">
+      <div class="flip-card-front">
     <img src="{% static 'images/mountain.jpg' %}" alt="Mountain Climbers" style="width: 100%; border-radius: 8px; margin-top: 10px;">
+  </div>
+      <div class="flip-card-back">
+        🚀🔥💪🏻 200 kcal quemadas aprox
+      </div>
+    </div>
   </div>
 
   <div class="exercise">
@@ -205,7 +280,14 @@
       <li>Intensidad: Media</li>
       <li>Beneficios: Mejora capacidad aeróbica</li>
     </ul>
+    <div class="flip-card-inner">
+      <div class="flip-card-front">
     <img src="{% static 'images/ciclismo.jpg' %}" alt="Ciclismo Indoor" style="width: 100%; border-radius: 8px; margin-top: 10px;">
+  </div>
+      <div class="flip-card-back">
+        🚀🔥💪🏻 200 kcal quemadas aprox
+      </div>
+    </div>
   </div>
 
   <div class="exercise">
@@ -216,7 +298,14 @@
       <li>Intensidad: Media</li>
       <li>Beneficios: Resistencia y coordinación</li>
     </ul>
+    <div class="flip-card-inner">
+      <div class="flip-card-front">
     <img src="{% static 'images/jumping-jacks.jpg' %}" alt="Saltos de tijera" style="width: 100%; border-radius: 8px; margin-top: 10px;">
+  </div>
+      <div class="flip-card-back">
+        🚀🔥💪🏻 200 kcal quemadas aprox
+      </div>
+    </div>
   </div>
 
   <div class="exercise">
@@ -227,8 +316,16 @@
       <li>Intensidad: Media-Alta</li>
       <li>Beneficios: Cardio explosivo y tonificación</li>
     </ul>
+    <div class="flip-card-inner">
+      <div class="flip-card-front">
     <img src="{% static 'images/high-knees.jpg' %}" alt="High Knees" style="width: 100%; border-radius: 8px; margin-top: 10px;">
   </div>
+      <div class="flip-card-back">
+        🚀🔥💪🏻 200 kcal quemadas aprox
+      </div>
+    </div>
+  </div>
+    
 </div>
 
 </body>

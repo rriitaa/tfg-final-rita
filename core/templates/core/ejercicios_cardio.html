@@ -131,7 +131,7 @@
       background-color: #e94d30;
     }
 
-    .exercise {
+   .exercise {
   perspective: 1000px; /* Necesario para el 3D flip */
 }
 
@@ -139,7 +139,9 @@
   position: relative;
   width: 100%;
   max-width: 280px;
-  height: 200px; /* Ajusta según la altura de tus imágenes */
+  height: 250px;
+  
+  aspect-ratio: 4 / 3;
   text-align: center;
   transition: transform 0.6s;
   transform-style: preserve-3d;
@@ -164,7 +166,8 @@
 
 .flip-card-front img {
   width: 100%;
-  height: 100%;
+  height: auto;
+  object-fit: cover;
   border-radius: 8px;
   object-fit: cover;
 }
