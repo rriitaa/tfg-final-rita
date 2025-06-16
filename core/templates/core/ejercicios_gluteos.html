@@ -131,6 +131,57 @@
       background-color: #e94d30;
     }
 
+    .exercise {
+  perspective: 1000px; /* Necesario para el 3D flip */
+}
+
+.flip-card-inner {
+  position: relative;
+  width: 100%;
+  max-width: 280px;
+  height: 250px;
+  
+  aspect-ratio: 4 / 3;
+  text-align: center;
+  transition: transform 0.6s;
+  transform-style: preserve-3d;
+  margin: 0 auto;
+  border-radius: 8px;
+}
+
+.exercise:hover .flip-card-inner {
+  transform: rotateY(180deg);
+}
+
+.flip-card-front, .flip-card-back {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  backface-visibility: hidden;
+  border-radius: 8px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.flip-card-front img {
+  width: 100%;
+  height: auto;
+  object-fit: cover;
+  border-radius: 8px;
+  object-fit: cover;
+}
+
+.flip-card-back {
+  background-color: #ed563bdc;
+  color: white;
+  font-size: 24px;
+  transform: rotateY(180deg);
+  padding: 20px;
+  box-sizing: border-box;
+  font-weight: 700;
+}
+
     /* Responsividad */
     @media screen and (max-width: 768px) {
       .cardio-exercises {
@@ -175,65 +226,108 @@
       <h2>Sentadillas</h2>
       <p>Las sentadillas son un excelente ejercicio para trabajar los glúteos y las piernas.</p>
       <ul>
-        <li>Duración: 4 series de 12 repeticiones</li>
-        <li>Intensidad: Alta</li>
+        <li>Duración: 2 series de 5 repeticiones</li>
+        <li>Intensidad: Baja</li>
         <li>Beneficios: Tonifica los glúteos y las piernas</li>
       </ul>
+      <div class="flip-card-inner">
+      <div class="flip-card-front">
       <img src="{% static 'images/sentadillas.jpg' %}" alt="Sentadillas" style="width: 100%; height: auto; border-radius: 8px; margin-top: 10px;">
     </div>
+      <div class="flip-card-back">
+        🚀🔥💪🏻 50 kcal quemadas aprox
+      </div>
+    </div>
+  </div>
 
     <div class="exercise">
       <h2>Puente de glúteos</h2>
       <p>Este ejercicio es perfecto para aislar y activar los músculos de los glúteos.</p>
       <ul>
-        <li>Duración: 3 series de 15 repeticiones</li>
-        <li>Intensidad: Media</li>
+        <li>Duración: 3 series de 5 repeticiones</li>
+        <li>Intensidad: Baja</li>
         <li>Beneficios: Aumenta la fuerza de los glúteos y la cadera</li>
       </ul>
+      <div class="flip-card-inner">
+      <div class="flip-card-front">
       <img src="{% static 'images/puente-gluteos.jpg' %}" alt="Puente de glúteos" style="width: 100%; height: auto; border-radius: 8px; margin-top: 10px;">
     </div>
+      <div class="flip-card-back">
+        🚀🔥💪🏻 45 kcal quemadas aprox
+      </div>
+    </div>
+  </div>
 
     <div class="exercise">
       <h2>Lunges</h2>
       <p>Los lunges son un ejercicio eficaz para fortalecer los glúteos y los músculos de las piernas.</p>
       <ul>
-        <li>Duración: 4 series de 10 repeticiones por pierna</li>
-        <li>Intensidad: Media-Alta</li>
+        <li>Duración: 3 series de 5 repeticiones por pierna</li>
+        <li>Intensidad: Baja</li>
         <li>Beneficios: Mejora la estabilidad y tonifica los glúteos</li>
       </ul>
+      <div class="flip-card-inner">
+      <div class="flip-card-front">
       <img src="{% static 'images/lunges.jpg' %}" alt="Lunges" style="width: 100%; height: auto; border-radius: 8px; margin-top: 10px;">
     </div>
+      <div class="flip-card-back">
+        🚀🔥💪🏻 75 kcal quemadas aprox
+      </div>
+    </div>
+  </div>
+
     <div class="exercise">
     <h2>Hip Thrust con barra</h2>
     <p>Uno de los mejores ejercicios para el desarrollo y fuerza de glúteos.</p>
     <ul>
-      <li>Duración: 4 series de 8-10 repeticiones</li>
-      <li>Intensidad: Alta</li>
+      <li>Duración: 3 series de 6 repeticiones</li>
+      <li>Intensidad: Baja</li>
       <li>Beneficios: Hipertrofia glútea, fuerza de cadera</li>
     </ul>
+    <div class="flip-card-inner">
+      <div class="flip-card-front">
     <img src="{% static 'images/hip-thrust-barra.jpg' %}" alt="Hip Thrust con barra" style="width: 100%; border-radius: 8px; margin-top: 10px;">
+  </div>
+      <div class="flip-card-back">
+        🚀🔥💪🏻 80 kcal quemadas aprox
+      </div>
+    </div>
   </div>
 
   <div class="exercise">
     <h2>Patada de glúteo con banda</h2>
     <p>Ideal para aislamiento muscular y activación de glúteos medios.</p>
     <ul>
-      <li>Duración: 3 series de 15 repeticiones por pierna</li>
-      <li>Intensidad: Media</li>
+      <li>Duración: 3 series de 5 repeticiones por pierna</li>
+      <li>Intensidad: Baja</li>
       <li>Beneficios: Activación glútea, resistencia</li>
     </ul>
+    <div class="flip-card-inner">
+      <div class="flip-card-front">
     <img src="{% static 'images/patada-banda.jpg' %}" alt="Patada glúteo" style="width: 100%; border-radius: 8px; margin-top: 10px;">
+  </div>
+      <div class="flip-card-back">
+        🚀🔥💪🏻 75 kcal quemadas aprox
+      </div>
+    </div>
   </div>
 
   <div class="exercise">
     <h2>Abducción lateral con banda</h2>
     <p>Excelente para trabajar glúteo medio y estabilizar la pelvis.</p>
     <ul>
-      <li>Duración: 3 series de 20 repeticiones</li>
-      <li>Intensidad: Media</li>
+      <li>Duración: 2 series de 10 repeticiones</li>
+      <li>Intensidad: Baja</li>
       <li>Beneficios: Estabilidad, tonificación y control muscular</li>
     </ul>
+    <div class="flip-card-inner">
+      <div class="flip-card-front">
     <img src="{% static 'images/abduccion-banda.jpg' %}" alt="Abducción lateral" style="width: 100%; border-radius: 8px; margin-top: 10px;">
+  </div>
+      <div class="flip-card-back">
+        🚀🔥💪🏻 55 kcal quemadas aprox
+      </div>
+    </div>
   </div>
 
   </div>
