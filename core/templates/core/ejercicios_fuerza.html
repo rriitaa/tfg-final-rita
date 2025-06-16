@@ -128,6 +128,57 @@
       background-color: #e94d30;
     }
 
+    .exercise {
+  perspective: 1000px; /* Necesario para el 3D flip */
+}
+
+.flip-card-inner {
+  position: relative;
+  width: 100%;
+  max-width: 280px;
+  height: 250px;
+  
+  aspect-ratio: 4 / 3;
+  text-align: center;
+  transition: transform 0.6s;
+  transform-style: preserve-3d;
+  margin: 0 auto;
+  border-radius: 8px;
+}
+
+.exercise:hover .flip-card-inner {
+  transform: rotateY(180deg);
+}
+
+.flip-card-front, .flip-card-back {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  backface-visibility: hidden;
+  border-radius: 8px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.flip-card-front img {
+  width: 100%;
+  height: auto;
+  object-fit: cover;
+  border-radius: 8px;
+  object-fit: cover;
+}
+
+.flip-card-back {
+  background-color: #ed563bdc;
+  color: white;
+  font-size: 24px;
+  transform: rotateY(180deg);
+  padding: 20px;
+  box-sizing: border-box;
+  font-weight: 700;
+}
+
     @media screen and (max-width: 768px) {
       .strength-exercises {
         grid-template-columns: repeat(2, 1fr);
@@ -171,70 +222,111 @@
       <h2>Flexiones</h2>
       <p>Las flexiones son un ejercicio clásico para trabajar el pecho, los tríceps y los hombros.</p>
       <ul>
-        <li>3 series de 10 repeticiones</li>
-        <li>Intensidad: Alta</li>
+        <li>2 series de 5 repeticiones</li>
+        <li>Intensidad: Baja</li>
         <li>Beneficios: Fortalece el torso superior</li>
       </ul>
+      <div class="flip-card-inner">
+      <div class="flip-card-front">
       <img src="{% static 'images/flexiones.jpg' %}" alt="Flexiones" style="width: 100%; border-radius: 8px; margin-top: 10px;">
     </div>
+      <div class="flip-card-back">
+        🚀🔥💪🏻 50 kcal quemadas aprox
+      </div>
+    </div>
+  </div>
 
     <div class="exercise">
       <h2>Sentadillas</h2>
       <p>Las sentadillas trabajan principalmente los muslos, glúteos y caderas, mejorando la fuerza en las piernas.</p>
       <ul>
-        <li>4 series de 15 repeticiones</li>
-        <li>Intensidad: Alta</li>
+        <li>3 series de 10 repeticiones</li>
+        <li>Intensidad: Baja</li>
         <li>Beneficios: Mejora fuerza en piernas</li>
       </ul>
+      <div class="flip-card-inner">
+      <div class="flip-card-front">
       <img src="{% static 'images/sentadillas.jpg' %}" alt="Sentadillas" style="width: 100%; border-radius: 8px; margin-top: 10px;">
     </div>
+      <div class="flip-card-back">
+        🚀🔥💪🏻 60 kcal quemadas aprox
+      </div>
+    </div>
+  </div>
 
     <div class="exercise">
       <h2>Fondos en paralelas</h2>
       <p>Trabajo intenso para tríceps, hombros y pectoral inferior usando el propio peso corporal.</p>
       <ul>
-        <li>3 series de 8-10 repeticiones</li>
-        <li>Intensidad: Alta</li>
+        <li>3 series de 5 repeticiones</li>
+        <li>Intensidad: Baja</li>
         <li>Beneficios: Mejora fuerza en el tren superior</li>
       </ul>
+      <div class="flip-card-inner">
+      <div class="flip-card-front">
       <img src="{% static 'images/fondos-paralelas.jpg' %}" alt="Fondos en paralelas" style="width: 100%; border-radius: 8px; margin-top: 10px;">
     </div>
+      <div class="flip-card-back">
+        🚀🔥💪🏻 75 kcal quemadas aprox
+      </div>
+    </div>
+  </div>
 
     <div class="exercise">
       <h2>Plancha</h2>
       <p>La plancha es un ejercicio de fuerza centrado en el core que trabaja todo el torso.</p>
       <ul>
-        <li>3 series de 30 segundos</li>
-        <li>Intensidad: Alta</li>
+        <li>3 series de 20 segundos</li>
+        <li>Intensidad: Baja</li>
         <li>Beneficios: Fortalece abdomen y postura</li>
       </ul>
+      <div class="flip-card-inner">
+      <div class="flip-card-front">
       <img src="{% static 'images/plancha.jpg' %}" alt="Plancha" style="width: 100%; border-radius: 8px; margin-top: 10px;">
     </div>
+      <div class="flip-card-back">
+        🚀🔥💪🏻 40 kcal quemadas aprox
+      </div>
+    </div>
+  </div>
 
   
     <div class="exercise">
       <h2>Dominadas</h2>
       <p>Ejercicio completo de tracción para espalda y brazos, ideal para fuerza del tren superior.</p>
       <ul>
-        <li>4 series de 6-8 repeticiones</li>
-        <li>Intensidad: Alta</li>
+        <li>3 series de 6 repeticiones</li>
+        <li>Intensidad: Baja</li>
         <li>Beneficios: Desarrolla dorsales y bíceps</li>
       </ul>
+      <div class="flip-card-inner">
+      <div class="flip-card-front">
       <img src="{% static 'images/dominadas.jpg' %}" alt="Dominadas" style="width: 100%; border-radius: 8px; margin-top: 10px;">
     </div>
+      <div class="flip-card-back">
+        🚀🔥💪🏻 65 kcal quemadas aprox
+      </div>
+    </div>
+  </div>
 
     <div class="exercise">
       <h2>Puente de glúteos</h2>
       <p>Excelente para fortalecer glúteos e isquiotibiales, protegiendo la zona lumbar.</p>
       <ul>
-        <li>3 series de 12 repeticiones</li>
-        <li>Intensidad: Media</li>
+        <li>3 series de 5 repeticiones</li>
+        <li>Intensidad: Baja</li>
         <li>Beneficios: Activa y fortalece glúteos</li>
       </ul>
+      <div class="flip-card-inner">
+      <div class="flip-card-front">
       <img src="{% static 'images/puente-gluteos.jpg' %}" alt="Puente de glúteos" style="width: 100%; border-radius: 8px; margin-top: 10px;">
     </div>
-    
-
+      <div class="flip-card-back">
+        🚀🔥💪🏻 60 kcal quemadas aprox
+      </div>
+    </div>
+  </div>
+  
   </div>
 </body>
 </html>
