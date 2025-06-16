@@ -131,6 +131,55 @@
       background-color: #e94d30;
     }
 
+    .exercise {
+  perspective: 1000px; /* Necesario para el 3D flip */
+}
+
+.flip-card-inner {
+  position: relative;
+  width: 100%;
+  max-width: 280px;
+  height: 200px; /* Ajusta según la altura de tus imágenes */
+  text-align: center;
+  transition: transform 0.6s;
+  transform-style: preserve-3d;
+  margin: 0 auto;
+  border-radius: 8px;
+}
+
+.exercise:hover .flip-card-inner {
+  transform: rotateY(180deg);
+}
+
+.flip-card-front, .flip-card-back {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  backface-visibility: hidden;
+  border-radius: 8px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.flip-card-front img {
+  width: 100%;
+  height: 100%;
+  border-radius: 8px;
+  object-fit: cover;
+}
+
+.flip-card-back {
+  background-color: #ed563b;
+  color: white;
+  font-size: 24px;
+  transform: rotateY(180deg);
+  padding: 20px;
+  box-sizing: border-box;
+  font-weight: 700;
+}
+
+
     /* Responsividad */
     @media screen and (max-width: 768px) {
       .cardio-exercises {
@@ -166,20 +215,27 @@
 
   <!-- Main Content -->
   <div class="cardio-title">
-    <h1>Ejercicios Cardio</h1>
-  </div>
+  <h1>Ejercicios Cardio</h1>
+</div>
 
-  <div class="cardio-exercises">
+<div class="cardio-exercises">
   <!-- Ejercicio 1 -->
   <div class="exercise">
     <h2>Correr</h2>
     <p>El running es uno de los mejores ejercicios para mejorar la resistencia cardiovascular. Puedes hacerlo en exterior o en cinta.</p>
     <ul>
-      <li>Duración: 30 minutos</li>
-      <li>Intensidad: Alta</li>
+      <li>Duración: 10 minutos</li>
+      <li>Intensidad: Baja-media</li>
       <li>Beneficios: Mejora la circulación y quema calorías</li>
     </ul>
-    <img src="{% static 'images/correr.jpg' %}" alt="Correr" style="width: 100%; border-radius: 8px; margin-top: 10px;">
+    <div class="flip-card-inner">
+      <div class="flip-card-front">
+        <img src="{% static 'images/correr.jpg' %}" alt="Correr">
+      </div>
+      <div class="flip-card-back">
+        200 kcal quemadas
+      </div>
+    </div>
   </div>
 
   <!-- Ejercicio 2 -->
@@ -187,11 +243,18 @@
     <h2>Jumping Jacks</h2>
     <p>Este ejercicio es excelente para mejorar la coordinación y la agilidad. Se realiza en intervalos cortos y rápidos.</p>
     <ul>
-      <li>Duración: 3 series de 20 repeticiones</li>
-      <li>Intensidad: Media-Alta</li>
+      <li>Duración: 2 series de 10 repeticiones</li>
+      <li>Intensidad: Baja-Media</li>
       <li>Beneficios: Aumenta la frecuencia cardíaca y mejora la resistencia</li>
     </ul>
-    <img src="{% static 'images/jumping-jacks.jpg' %}" alt="Jumping Jacks" style="width: 100%; border-radius: 8px; margin-top: 10px;">
+    <div class="flip-card-inner">
+      <div class="flip-card-front">
+        <img src="{% static 'images/jumping-jacks.jpg' %}" alt="Jumping Jacks">
+      </div>
+      <div class="flip-card-back">
+        120 kcal quemadas
+      </div>
+    </div>
   </div>
 
   <!-- Ejercicio 3 -->
@@ -199,11 +262,18 @@
     <h2>Salto de cuerda</h2>
     <p>Saltando la cuerda se logran mejorar tanto la resistencia cardiovascular como la tonificación muscular.</p>
     <ul>
-      <li>Duración: 15-20 minutos</li>
-      <li>Intensidad: Alta</li>
+      <li>Duración: 5-10 minutos</li>
+      <li>Intensidad: Baja</li>
       <li>Beneficios: Mejora la coordinación y la salud cardiovascular</li>
     </ul>
-    <img src="{% static 'images/salto-cuerda.jpg' %}" alt="Salto de cuerda" style="width: 100%; border-radius: 8px; margin-top: 10px;">
+    <div class="flip-card-inner">
+      <div class="flip-card-front">
+        <img src="{% static 'images/salto-cuerda.jpg' %}" alt="Salto de cuerda">
+      </div>
+      <div class="flip-card-back">
+        150 kcal quemadas
+      </div>
+    </div>
   </div>
 
   <!-- Ejercicio 4 -->
@@ -211,11 +281,18 @@
     <h2>Burpees</h2>
     <p>Un ejercicio completo que activa el cuerpo entero, excelente para quemar calorías rápidamente.</p>
     <ul>
-      <li>Duración: 4 series de 10 repeticiones</li>
-      <li>Intensidad: Muy alta</li>
+      <li>Duración: 1 series de 10 repeticiones</li>
+      <li>Intensidad: Baja</li>
       <li>Beneficios: Aumenta la resistencia y trabaja fuerza explosiva</li>
     </ul>
-    <img src="{% static 'images/burpees.jpg' %}" alt="Burpees" style="width: 100%; border-radius: 8px; margin-top: 10px;">
+    <div class="flip-card-inner">
+      <div class="flip-card-front">
+        <img src="{% static 'images/burpees.jpg' %}" alt="Burpees">
+      </div>
+      <div class="flip-card-back">
+        100 kcal quemadas
+      </div>
+    </div>
   </div>
 
   <!-- Ejercicio 5 -->
@@ -223,27 +300,39 @@
     <h2>Mountain Climbers verticales</h2>
     <p>Ejercicio que simula escalar, ideal para quemar grasa y trabajar core, brazos y piernas al mismo tiempo.</p>
     <ul>
-      <li>Duración: 3 series de 30 segundos</li>
-      <li>Intensidad: Alta</li>
+      <li>Duración: 2 series de 20 segundos</li>
+      <li>Intensidad: Baja</li>
       <li>Beneficios: Quema grasa, mejora resistencia y coordinación</li>
     </ul>
-    <img src="{% static 'images/mountain-vertical.jpg' %}" alt="Mountain Climbers" style="width: 100%; border-radius: 8px; margin-top: 10px;">
+    <div class="flip-card-inner">
+      <div class="flip-card-front">
+        <img src="{% static 'images/mountain-vertical.jpg' %}" alt="Mountain Climbers">
+      </div>
+      <div class="flip-card-back">
+        120 kcal quemadas
+      </div>
+    </div>
   </div>
 
   <!-- Ejercicio 6 -->
   <div class="exercise">
-  <h2>Subir escaleras</h2>
-  <p>Ejercicio cardiovascular intenso que mejora la resistencia y fortalece el tren inferior utilizando el propio peso corporal.</p>
-  <ul>
-    <li>Duración: 15 minutos continuos o 5 series de 3 minutos</li>
-    <li>Intensidad: Alta</li>
-    <li>Beneficios: Mejora la capacidad pulmonar, tonifica piernas y glúteos, y quema calorías rápidamente</li>
-  </ul>
-  <img src="{% static 'images/escaleras.jpg' %}" alt="Subir escaleras" style="width: 100%; border-radius: 8px; margin-top: 10px;">
-</div>
-
-</div>
-
+    <h2>Subir escaleras</h2>
+    <p>Ejercicio cardiovascular intenso que mejora la resistencia y fortalece el tren inferior utilizando el propio peso corporal.</p>
+    <ul>
+      <li>Duración: 3 minutos continuos o 2 series de 3 minutos</li>
+      <li>Intensidad: Baja</li>
+      <li>Beneficios: Mejora la capacidad pulmonar, tonifica piernas y glúteos, y quema calorías rápidamente</li>
+    </ul>
+    <div class="flip-card-inner">
+      <div class="flip-card-front">
+        <img src="{% static 'images/escaleras.jpg' %}" alt="Subir escaleras">
+      </div>
+      <div class="flip-card-back">
+        80 kcal quemadas
+      </div>
+    </div>
   </div>
+</div>
+</div>
 </body>
 </html>
