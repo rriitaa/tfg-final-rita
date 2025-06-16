@@ -128,6 +128,57 @@
       background-color: #e94d30;
     }
 
+    .exercise {
+  perspective: 1000px; /* Necesario para el 3D flip */
+}
+
+.flip-card-inner {
+  position: relative;
+  width: 100%;
+  max-width: 280px;
+  height: 250px;
+  
+  aspect-ratio: 4 / 3;
+  text-align: center;
+  transition: transform 0.6s;
+  transform-style: preserve-3d;
+  margin: 0 auto;
+  border-radius: 8px;
+}
+
+.exercise:hover .flip-card-inner {
+  transform: rotateY(180deg);
+}
+
+.flip-card-front, .flip-card-back {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  backface-visibility: hidden;
+  border-radius: 8px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.flip-card-front img {
+  width: 100%;
+  height: auto;
+  object-fit: cover;
+  border-radius: 8px;
+  object-fit: cover;
+}
+
+.flip-card-back {
+  background-color: #ed563bdc;
+  color: white;
+  font-size: 24px;
+  transform: rotateY(180deg);
+  padding: 20px;
+  box-sizing: border-box;
+  font-weight: 700;
+}
+
     @media screen and (max-width: 768px) {
       .cardio-exercises {
         grid-template-columns: repeat(2, 1fr);
@@ -168,11 +219,18 @@
     <h2>Remo con banda o mancuerna</h2>
     <p>Ejercicio clave para trabajar dorsales y mejorar postura.</p>
     <ul>
-      <li>3 series de 12 repeticiones</li>
+      <li>3 series de 10 repeticiones</li>
       <li>Intensidad: Media</li>
       <li>Beneficios: Fortalece la espalda media y mejora el control escapular</li>
     </ul>
+    <div class="flip-card-inner">
+      <div class="flip-card-front">
     <img src="{% static 'images/remo-banda-man.jpg' %}" alt="Remo con banda" style="width: 100%; border-radius: 8px; margin-top: 10px;">
+  </div>
+      <div class="flip-card-back">
+        🚀🔥💪🏻 100 kcal quemadas aprox
+      </div>
+    </div>
   </div>
 
   <div class="exercise">
@@ -183,29 +241,50 @@
       <li>Intensidad: Media</li>
       <li>Beneficios: Mejora resistencia de la espalda baja</li>
     </ul>
+    <div class="flip-card-inner">
+      <div class="flip-card-front">
     <img src="{% static 'images/superman-hold.jpg' %}" alt="Superman hold" style="width: 100%; border-radius: 8px; margin-top: 10px;">
+  </div>
+      <div class="flip-card-back">
+        🚀🔥💪🏻 105 kcal quemadas aprox
+      </div>
+    </div>
   </div>
 
   <div class="exercise">
     <h2>Pull-ups asistidas</h2>
     <p>Ideal para trabajar dorsales sin cargar todo el peso corporal.</p>
     <ul>
-      <li>3 series de 8-10 repeticiones</li>
+      <li>3 series de 8 repeticiones</li>
       <li>Intensidad: Media</li>
       <li>Beneficios: Mejora fuerza funcional en espalda y brazos</li>
     </ul>
+    <div class="flip-card-inner">
+      <div class="flip-card-front">
     <img src="{% static 'images/pullup-banda.jpg' %}" alt="Pull-ups asistidas" style="width: 100%; border-radius: 8px; margin-top: 10px;">
+  </div>
+      <div class="flip-card-back">
+        🚀🔥💪🏻 80 kcal quemadas aprox
+      </div>
+    </div>
   </div>
 
   <div class="exercise">
     <h2>Reverse flys con mancuernas</h2>
     <p>Trabaja los deltoides posteriores y parte superior de la espalda.</p>
     <ul>
-      <li>3 series de 12-15 repeticiones</li>
+      <li>3 series de 12 repeticiones</li>
       <li>Intensidad: Media</li>
       <li>Beneficios: Mejora la postura y previene lesiones</li>
     </ul>
+    <div class="flip-card-inner">
+      <div class="flip-card-front">
     <img src="{% static 'images/reverse-flys.jpg' %}" alt="Reverse flys" style="width: 100%; border-radius: 8px; margin-top: 10px;">
+  </div>
+      <div class="flip-card-back">
+        🚀🔥💪🏻 80 kcal quemadas aprox
+      </div>
+    </div>
   </div>
 
   <div class="exercise">
@@ -216,7 +295,14 @@
       <li>Intensidad: Media</li>
       <li>Beneficios: Estabilidad lumbar y coordinación</li>
     </ul>
+    <div class="flip-card-inner">
+      <div class="flip-card-front">
     <img src="{% static 'images/bird-dog.jpg' %}" alt="Bird Dog" style="width: 100%; border-radius: 8px; margin-top: 10px;">
+  </div>
+      <div class="flip-card-back">
+        🚀🔥💪🏻 100 kcal quemadas aprox
+      </div>
+    </div>
   </div>
 
   <div class="exercise">
@@ -227,7 +313,14 @@
       <li>Intensidad: Media</li>
       <li>Beneficios: Mejora el equilibrio y la fuerza de oblicuos y espalda</li>
     </ul>
+    <div class="flip-card-inner">
+      <div class="flip-card-front">
     <img src="{% static 'images/plancha-rotacion.jpg' %}" alt="Plancha rotación" style="width: 100%; border-radius: 8px; margin-top: 10px;">
+  </div>
+      <div class="flip-card-back">
+        🚀🔥💪🏻 95 kcal quemadas aprox
+      </div>
+    </div>
   </div>
 </div>
 
