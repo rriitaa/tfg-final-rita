@@ -151,6 +151,57 @@
   border-radius: 8px;
 }
 
+.exercise {
+  perspective: 1000px; /* Necesario para el 3D flip */
+}
+
+.flip-card-inner {
+  position: relative;
+  width: 100%;
+  max-width: 280px;
+  height: 250px;
+  
+  aspect-ratio: 4 / 3;
+  text-align: center;
+  transition: transform 0.6s;
+  transform-style: preserve-3d;
+  margin: 0 auto;
+  border-radius: 8px;
+}
+
+.exercise:hover .flip-card-inner {
+  transform: rotateY(180deg);
+}
+
+.flip-card-front, .flip-card-back {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  backface-visibility: hidden;
+  border-radius: 8px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.flip-card-front img {
+  width: 100%;
+  height: auto;
+  object-fit: cover;
+  border-radius: 8px;
+  object-fit: cover;
+}
+
+.flip-card-back {
+  background-color: #ed563bdc;
+  color: white;
+  font-size: 24px;
+  transform: rotateY(180deg);
+  padding: 20px;
+  box-sizing: border-box;
+  font-weight: 700;
+}
+
     @media screen and (max-width: 768px) {
       .strength-exercises {
         grid-template-columns: repeat(2, 1fr);
@@ -186,7 +237,7 @@
   <!-- Main Content -->
 
 <div class="main-content"></div>
-<h1 class="orange-box">TODOS LOS EJERCICIOS DE FUERZA DISPONIBLES</h1>
+<h1 class="orange-box">TODOS LOS EJERCICIOS DE FLEXIBILIDAD DISPONIBLES</h1>
 
   <div class="strength-exercises">
     <!-- Ejercicios de Flexibilidad -->
@@ -198,8 +249,15 @@
         <li>Intensidad: Baja</li>
         <li>Beneficios: Mejora la flexibilidad y reduce el riesgo de lesiones</li>
       </ul>
+      <div class="flip-card-inner">
+      <div class="flip-card-front">
       <img src="{% static 'images/isoquea.jpg' %}" alt="Estiramiento de Cuádriceps" style="width: 100%; height: auto; border-radius: 8px; margin-top: 10px;">
     </div>
+      <div class="flip-card-back">
+        🚀🔥💪🏻 10 kcal quemadas aprox
+      </div>
+    </div>
+  </div>
 
     <div class="exercise">
       <h2>Estiramiento de espalda baja</h2>
@@ -209,8 +267,15 @@
         <li>Intensidad: Baja</li>
         <li>Beneficios: Alivia el dolor y mejora la postura</li>
       </ul>
+      <div class="flip-card-inner">
+      <div class="flip-card-front">
       <img src="{% static 'images/estiramiento-espalda.jpg' %}" alt="Estiramiento de Espalda Baja" style="width: 100%; height: auto; border-radius: 8px; margin-top: 10px;">
     </div>
+      <div class="flip-card-back">
+        🚀🔥💪🏻 5 kcal quemadas aprox
+      </div>
+    </div>
+  </div>
 
     <div class="exercise">
       <h2>Estiramiento de isquiotibiales</h2>
@@ -220,43 +285,92 @@
         <li>Intensidad: Baja</li>
         <li>Beneficios: Aumenta la flexibilidad y la movilidad de las piernas</li>
       </ul>
+      <div class="flip-card-inner">
+      <div class="flip-card-front">
       <img src="{% static 'images/legg.jpg' %}" alt="Estiramiento de Isquiotibiales" style="width: 100%; height: auto; border-radius: 8px; margin-top: 10px;">
     </div>
+      <div class="flip-card-back">
+        🚀🔥💪🏻 10 kcal quemadas aprox
+      </div>
+    </div>
+  </div>
+
     <!-- 4 -->
     <div class="exercise">
       <h2>Leg Swings dinámicos</h2>
       <p>Movimiento activo mejora la flexibilidad y la estabilidad de la cadera.</p>
       <ul>
-        <li>3 series de 15 balanceos por pierna</li>
-        <li>Intensidad: Media</li>
+        <li>3 series de 10 balanceos por pierna</li>
+        <li>Intensidad: Baja</li>
         <li>Beneficios: Aumenta rango de movimiento y prepara para actividad</li>
       </ul>
+      <div class="flip-card-inner">
+      <div class="flip-card-front">
       <img src="{% static 'images/leg-swings.jpg' %}" alt="Leg Swings" style="width:100%;border-radius:8px;margin-top:10px;">
     </div>
+      <div class="flip-card-back">
+        🚀🔥💪🏻 20 kcal quemadas aprox
+      </div>
+    </div>
+  </div>
+
     <!-- 5 -->
     <div class="exercise">
       <h2>Deep Lunge + Twist</h2>
       <p>Estiramiento de cadera y columna con rotación para mejorar movilidad general.</p>
       <ul>
-        <li>2 series de 30 s por lado</li>
-        <li>Intensidad: Media</li>
+        <li>2 series de 20s por lado</li>
+        <li>Intensidad: Baja</li>
         <li>Beneficios: Flexibiliza cadera y tórax</li>
       </ul>
+      <div class="flip-card-inner">
+      <div class="flip-card-front">
       <img src="{% static 'images/deep-lunge-twist.jpg' %}" alt="Deep Lunge Twist" style="width:100%;border-radius:8px;margin-top:10px;">
     </div>
+      <div class="flip-card-back">
+        🚀🔥💪🏻 20 kcal quemadas aprox
+      </div>
+    </div>
+  </div>
+
     <!-- 6 -->
     <div class="exercise">
       <h2>Perro abajo – Cobra Flow</h2>
       <p>Transición fluida mejora la extensión de espalda y apertura de pecho.</p>
       <ul>
-        <li>3 series de 8 repeticiones</li>
-        <li>Intensidad: Media</li>
+        <li>2 series de 5 repeticiones</li>
+        <li>Intensidad: Baja</li>
         <li>Beneficios: Aumenta movilidad de columna y fuerza de core</li>
       </ul>
+      <div class="flip-card-inner">
+      <div class="flip-card-front">
       <img src="{% static 'images/downward-dog-cobra.jpg' %}" alt="Perro abajo a Cobra" style="width:100%;border-radius:8px;margin-top:10px;">
     </div>
+      <div class="flip-card-back">
+        🚀🔥💪🏻 10 kcal quemadas aprox
+      </div>
+    </div>
+  </div>
+ 
 
-    
+  <div class="exercise">
+    <h2>Leg Swings</h2>
+    <p>Balanceo de piernas para movilizar cadera e isquiotibiales antes de entrenar.</p>
+    <ul>
+      <li>2 series de 15 repeticiones por pierna</li>
+      <li>Enfoque: Dinámico</li>
+      <li>Intensidad: Media</li>
+      <li>Beneficios: Movilidad y activación</li>
+    </ul>
+    <div class="flip-card-inner">
+      <div class="flip-card-front">
+    <img src="{% static 'images/leg-swings.jpg' %}" alt="Leg Swings">
+  </div>
+      <div class="flip-card-back">
+        🚀🔥💪🏻 20 kcal quemadas aprox
+      </div>
+    </div>
+  </div>
 
   <div class="exercise">
     <h2>Estiramiento cadera + rotación</h2>
@@ -264,9 +378,17 @@
     <ul>
       <li>3 repeticiones de 20 segundos por lado</li>
       <li>Enfoque: Movilidad activa</li>
+      <li>Intensidad: Media</li>
       <li>Beneficios: Flexibilidad de caderas y columna</li>
     </ul>
-    <img src="{% static 'images/deep-lunge-twist.jpg' %}" alt="Deep Lunge Twist" style="width:100%;border-radius:8px;margin-top:10px;">
+    <div class="flip-card-inner">
+      <div class="flip-card-front">
+    <img src="{% static 'images/deep-lunge-twist.jpg' %}" alt="Deep Lunge Twist">
+  </div>
+      <div class="flip-card-back">
+        🚀🔥💪🏻 20 kcal quemadas aprox
+      </div>
+    </div>
   </div>
 
   <div class="exercise">
@@ -275,9 +397,17 @@
     <ul>
       <li>5 repeticiones controladas</li>
       <li>Enfoque: Fluidez y movilidad</li>
+      <li>Intensidad: Media</li>
       <li>Beneficios: Columna, hombros y caderas</li>
     </ul>
-    <img src="{% static 'images/downward-dog-cobra.jpg' %}" alt="Downward Dog to Cobra" style="width:100%;border-radius:8px;margin-top:10px;">
+    <div class="flip-card-inner">
+      <div class="flip-card-front">
+    <img src="{% static 'images/downward-dog-cobra.jpg' %}" alt="Downward Dog to Cobra">
+  </div>
+      <div class="flip-card-back">
+        🚀🔥💪🏻 25 kcal quemadas aprox
+      </div>
+    </div>
   </div>
 
   <div class="exercise">
@@ -286,20 +416,17 @@
   <ul>
     <li>3 intentos de 30-60 segundos</li>
     <li>Enfoque: Equilibrio y fuerza</li>
+    <li>Intensidad: Media</li>
     <li>Beneficios: Estabilidad central, control corporal y enfoque mental</li>
   </ul>
-  <img src="{% static 'images/headstand.jpg' %}" alt="Headstand" style="width:100%;border-radius:8px;margin-top:10px;">
+  <div class="flip-card-inner">
+      <div class="flip-card-front">
+  <img src="{% static 'images/headstand.jpg' %}" alt="Headstand">
 </div>
-
-<div class="exercise">
-    <h2>Leg Swings</h2>
-    <p>Balanceo de piernas para movilizar cadera e isquiotibiales antes de entrenar.</p>
-    <ul>
-      <li>2 series de 15 repeticiones por pierna</li>
-      <li>Enfoque: Dinámico</li>
-      <li>Beneficios: Movilidad y activación</li>
-    </ul>
-    <img src="{% static 'images/leg-swings.jpg' %}" alt="Leg Swings" style="width:100%;border-radius:8px;margin-top:10px;">
+      <div class="flip-card-back">
+        🚀🔥💪🏻 30 kcal quemadas aprox
+      </div>
+    </div>
   </div>
 
 
@@ -309,9 +436,17 @@
     <ul>
       <li>2 series de 10 repeticiones</li>
       <li>Enfoque: Suavidad y control</li>
+      <li>Intensidad: Media</li>
       <li>Beneficios: Alivio de tensión cervical</li>
     </ul>
-    <img src="{% static 'images/neck-shoulder-rolls.jpg' %}" alt="Rotaciones cuello hombros" style="width:100%;border-radius:8px;margin-top:10px;">
+    <div class="flip-card-inner">
+      <div class="flip-card-front">
+    <img src="{% static 'images/neck-shoulder-rolls.jpg' %}" alt="Rotaciones cuello hombros">
+  </div>
+      <div class="flip-card-back">
+        🚀🔥💪🏻 15 kcal quemadas aprox
+      </div>
+    </div>
   </div>
 
   <div class="exercise">
@@ -320,12 +455,21 @@
     <ul>
       <li>2 series de 10 por pierna</li>
       <li>Enfoque: Calentamiento activo</li>
+      <li>Intensidad: Media</li>
       <li>Beneficios: Prevención de lesiones y movilidad</li>
     </ul>
-    <img src="{% static 'images/cuadriceps-stre.jpg' %}" alt="Estiramiento dinámico cuádriceps" style="width:100%;border-radius:8px;margin-top:10px;">
+    <div class="flip-card-inner">
+      <div class="flip-card-front">
+    <img src="{% static 'images/cuadriceps-stre.jpg' %}" alt="Estiramiento dinámico cuádriceps">
+  </div>
+      <div class="flip-card-back">
+        🚀🔥💪🏻 15 kcal quemadas aprox
+      </div>
+    </div>
   </div>
 
-  <div class="exercise">
+
+<div class="exercise">
     <h2>Split lateral</h2>
     <p>Estiramiento profundo para isquiotibiales, aductores y flexores de cadera.</p>
     <ul>
@@ -333,7 +477,14 @@
       <li>Intensidad: Alta</li>
       <li>Beneficios: Apertura de cadera, elongación total</li>
     </ul>
+    <div class="flip-card-inner">
+      <div class="flip-card-front">
     <img src="{% static 'images/legg.jpg' %}" alt="Split lateral" style="width: 100%; border-radius: 8px; margin-top: 10px;">
+  </div>
+      <div class="flip-card-back">
+        🚀🔥💪🏻 30 kcal quemadas aprox
+      </div>
+    </div>
   </div>
 
   <div class="exercise">
@@ -344,7 +495,14 @@
       <li>Intensidad: Alta</li>
       <li>Beneficios: Flexibilidad dorsal y apertura torácica</li>
     </ul>
+    <div class="flip-card-inner">
+      <div class="flip-card-front">
     <img src="{% static 'images/puente-gluteos.jpg' %}" alt="Puente de yoga" style="width: 100%; border-radius: 8px; margin-top: 10px;">
+  </div>
+      <div class="flip-card-back">
+        🚀🔥💪🏻 35 kcal quemadas aprox
+      </div>
+    </div>
   </div>
 
   <div class="exercise">
@@ -355,7 +513,14 @@
       <li>Intensidad: Alta</li>
       <li>Beneficios: Libera tensión en cadera y espalda baja</li>
     </ul>
+    <div class="flip-card-inner">
+      <div class="flip-card-front">
     <img src="{% static 'images/paloma-extendida.jpg' %}" alt="Paloma extendida" style="width: 100%; border-radius: 8px; margin-top: 10px;">
+  </div>
+      <div class="flip-card-back">
+        🚀🔥💪🏻 25 kcal quemadas aprox
+      </div>
+    </div>
   </div>
 
   <div class="exercise">
@@ -366,7 +531,14 @@
       <li>Intensidad: Alta</li>
       <li>Beneficios: Control motor y elongación</li>
     </ul>
+    <div class="flip-card-inner">
+      <div class="flip-card-front">
     <img src="{% static 'images/pierna-barra.jpg' %}" alt="Pierna en barra" style="width: 100%; border-radius: 8px; margin-top: 10px;">
+  </div>
+      <div class="flip-card-back">
+        🚀🔥💪🏻 30 kcal quemadas aprox
+      </div>
+    </div>
   </div>
 
   <div class="exercise">
@@ -377,7 +549,14 @@
       <li>Intensidad: Media-Alta</li>
       <li>Beneficios: Movilidad torácica, hombros y cadera</li>
     </ul>
+    <div class="flip-card-inner">
+      <div class="flip-card-front">
     <img src="{% static 'images/backbend.jpg' %}" alt="Backbend asistido" style="width: 100%; border-radius: 8px; margin-top: 10px;">
+  </div>
+      <div class="flip-card-back">
+        🚀🔥💪🏻 25 kcal quemadas aprox
+      </div>
+    </div>
   </div>
 
   <div class="exercise">
@@ -388,8 +567,16 @@
       <li>Intensidad: Alta</li>
       <li>Beneficios: Flexibilidad integral y relajación</li>
     </ul>
+    <div class="flip-card-inner">
+      <div class="flip-card-front">
     <img src="{% static 'images/cadena-posterior.jpg' %}" alt="Cadena posterior" style="width: 100%; border-radius: 8px; margin-top: 10px;">
   </div>
+      <div class="flip-card-back">
+        🚀🔥💪🏻 20 kcal quemadas aprox
+      </div>
+    </div>
+  </div>
+</div>
     
 
   </div>
