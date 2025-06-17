@@ -151,6 +151,58 @@
   border-radius: 8px;
 }
 
+ .exercise {
+  perspective: 1000px; /* Necesario para el 3D flip */
+}
+
+.flip-card-inner {
+  position: relative;
+  width: 100%;
+  max-width: 280px;
+  height: 250px;
+  
+  aspect-ratio: 4 / 3;
+  text-align: center;
+  transition: transform 0.6s;
+  transform-style: preserve-3d;
+  margin: 0 auto;
+  border-radius: 8px;
+}
+
+.exercise:hover .flip-card-inner {
+  transform: rotateY(180deg);
+}
+
+.flip-card-front, .flip-card-back {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  backface-visibility: hidden;
+  border-radius: 8px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.flip-card-front img {
+  width: 100%;
+  height: auto;
+  object-fit: cover;
+  border-radius: 8px;
+  object-fit: cover;
+}
+
+.flip-card-back {
+  background-color: #ed563bdc;
+  color: white;
+  font-size: 24px;
+  transform: rotateY(180deg);
+  padding: 20px;
+  box-sizing: border-box;
+  font-weight: 700;
+}
+
+
     @media screen and (max-width: 768px) {
       .strength-exercises {
         grid-template-columns: repeat(2, 1fr);
@@ -194,109 +246,180 @@
       <h2>Sentadillas</h2>
       <p>Las sentadillas son un excelente ejercicio para trabajar los glúteos y las piernas.</p>
       <ul>
-        <li>Duración: 4 series de 12 repeticiones</li>
-        <li>Intensidad: Alta</li>
+        <li>Duración: 2 series de 5 repeticiones</li>
+        <li>Intensidad: Baja</li>
         <li>Beneficios: Tonifica los glúteos y las piernas</li>
       </ul>
+      <div class="flip-card-inner">
+      <div class="flip-card-front">
       <img src="{% static 'images/sentadillas.jpg' %}" alt="Sentadillas" style="width: 100%; height: auto; border-radius: 8px; margin-top: 10px;">
     </div>
+      <div class="flip-card-back">
+        🚀🔥💪🏻 50 kcal quemadas aprox
+      </div>
+    </div>
+  </div>
 
     <div class="exercise">
       <h2>Puente de glúteos</h2>
       <p>Este ejercicio es perfecto para aislar y activar los músculos de los glúteos.</p>
       <ul>
-        <li>Duración: 3 series de 15 repeticiones</li>
-        <li>Intensidad: Media</li>
+        <li>Duración: 3 series de 5 repeticiones</li>
+        <li>Intensidad: Baja</li>
         <li>Beneficios: Aumenta la fuerza de los glúteos y la cadera</li>
       </ul>
+      <div class="flip-card-inner">
+      <div class="flip-card-front">
       <img src="{% static 'images/puente-gluteos.jpg' %}" alt="Puente de glúteos" style="width: 100%; height: auto; border-radius: 8px; margin-top: 10px;">
     </div>
+      <div class="flip-card-back">
+        🚀🔥💪🏻 45 kcal quemadas aprox
+      </div>
+    </div>
+  </div>
 
     <div class="exercise">
       <h2>Lunges</h2>
       <p>Los lunges son un ejercicio eficaz para fortalecer los glúteos y los músculos de las piernas.</p>
       <ul>
-        <li>Duración: 4 series de 10 repeticiones por pierna</li>
-        <li>Intensidad: Media-Alta</li>
+        <li>Duración: 3 series de 5 repeticiones por pierna</li>
+        <li>Intensidad: Baja</li>
         <li>Beneficios: Mejora la estabilidad y tonifica los glúteos</li>
       </ul>
+      <div class="flip-card-inner">
+      <div class="flip-card-front">
       <img src="{% static 'images/lunges.jpg' %}" alt="Lunges" style="width: 100%; height: auto; border-radius: 8px; margin-top: 10px;">
     </div>
+      <div class="flip-card-back">
+        🚀🔥💪🏻 75 kcal quemadas aprox
+      </div>
+    </div>
+  </div>
+
     <div class="exercise">
     <h2>Hip Thrust con barra</h2>
     <p>Uno de los mejores ejercicios para el desarrollo y fuerza de glúteos.</p>
     <ul>
-      <li>Duración: 4 series de 8-10 repeticiones</li>
-      <li>Intensidad: Alta</li>
+      <li>Duración: 3 series de 6 repeticiones</li>
+      <li>Intensidad: Baja</li>
       <li>Beneficios: Hipertrofia glútea, fuerza de cadera</li>
     </ul>
+    <div class="flip-card-inner">
+      <div class="flip-card-front">
     <img src="{% static 'images/hip-thrust-barra.jpg' %}" alt="Hip Thrust con barra" style="width: 100%; border-radius: 8px; margin-top: 10px;">
+  </div>
+      <div class="flip-card-back">
+        🚀🔥💪🏻 80 kcal quemadas aprox
+      </div>
+    </div>
   </div>
 
   <div class="exercise">
     <h2>Patada de glúteo con banda</h2>
     <p>Ideal para aislamiento muscular y activación de glúteos medios.</p>
     <ul>
-      <li>Duración: 3 series de 15 repeticiones por pierna</li>
-      <li>Intensidad: Media</li>
+      <li>Duración: 3 series de 5 repeticiones por pierna</li>
+      <li>Intensidad: Baja</li>
       <li>Beneficios: Activación glútea, resistencia</li>
     </ul>
+    <div class="flip-card-inner">
+      <div class="flip-card-front">
     <img src="{% static 'images/patada-banda.jpg' %}" alt="Patada glúteo" style="width: 100%; border-radius: 8px; margin-top: 10px;">
+  </div>
+      <div class="flip-card-back">
+        🚀🔥💪🏻 75 kcal quemadas aprox
+      </div>
+    </div>
   </div>
 
   <div class="exercise">
     <h2>Abducción lateral con banda</h2>
     <p>Excelente para trabajar glúteo medio y estabilizar la pelvis.</p>
     <ul>
-      <li>Duración: 3 series de 20 repeticiones</li>
-      <li>Intensidad: Media</li>
+      <li>Duración: 2 series de 10 repeticiones</li>
+      <li>Intensidad: Baja</li>
       <li>Beneficios: Estabilidad, tonificación y control muscular</li>
     </ul>
+    <div class="flip-card-inner">
+      <div class="flip-card-front">
     <img src="{% static 'images/abduccion-banda.jpg' %}" alt="Abducción lateral" style="width: 100%; border-radius: 8px; margin-top: 10px;">
+  </div>
+      <div class="flip-card-back">
+        🚀🔥💪🏻 55 kcal quemadas aprox
+      </div>
+    </div>
   </div>
 
   <div class="exercise">
-  <h2>Hip Thrust con una pierna</h2>
+    <h2>Hip Thrust con una pierna</h2>
     <p>Variante unilateral del hip thrust para máxima activación del glúteo mayor.</p>
     <ul>
       <li>3 series de 10-12 repeticiones</li>
       <li>Intensidad: Media</li>
       <li>Beneficios: Fuerza y simetría muscular</li>
     </ul>
-    <img src="{% static 'images/hip-thrust-barra.jpg' %}" alt="Hip thrust una pierna" style="width: 100%; height: auto; border-radius: 8px; margin-top: 10px;">
+    <div class="flip-card-inner">
+      <div class="flip-card-front">
+    <img src="{% static 'images/hip-thrust-barra.jpg' %}" alt="Hip thrust una pierna" style="width: 100%; border-radius: 8px; margin-top: 10px;">
+  </div>
+      <div class="flip-card-back">
+        🚀🔥💪🏻 105 kcal quemadas aprox
+      </div>
+    </div>
   </div>
 
   <div class="exercise">
     <h2>Step-ups con rodilla arriba</h2>
     <p>Ejercicio funcional para fuerza, equilibrio y activación glútea.</p>
     <ul>
-      <li>3 series de 12 repeticiones por pierna</li>
-      <li>Intensidad: Media-Alta</li>
+      <li>3 series de 8 repeticiones por pierna</li>
+      <li>Intensidad: Media</li>
       <li>Beneficios: Estabilidad y resistencia muscular</li>
     </ul>
+    <div class="flip-card-inner">
+      <div class="flip-card-front">
     <img src="{% static 'images/step-up-rodilla.jpg' %}" alt="Step up rodilla arriba" style="width: 100%; border-radius: 8px; margin-top: 10px;">
+  </div>
+      <div class="flip-card-back">
+        🚀🔥💪🏻 110 kcal quemadas aprox
+      </div>
+    </div>
   </div>
 
   <div class="exercise">
     <h2>Sentadilla búlgara</h2>
     <p>Trabajo unilateral intenso que activa glúteo, cuádriceps e isquios.</p>
     <ul>
-      <li>3 series de 10 repeticiones por pierna</li>
-      <li>Intensidad: Alta</li>
+      <li>2 series de 10 repeticiones por pierna</li>
+      <li>Intensidad: Media</li>
       <li>Beneficios: Equilibrio y control neuromuscular</li>
     </ul>
+    <div class="flip-card-inner">
+      <div class="flip-card-front">
     <img src="{% static 'images/sentadilla-bulgara-pesada.jpg' %}" alt="Sentadilla búlgara" style="width: 100%; border-radius: 8px; margin-top: 10px;">
+  </div>
+      <div class="flip-card-back">
+        🚀🔥💪🏻 95 kcal quemadas aprox
+      </div>
+    </div>
   </div>
 
   <div class="exercise">
     <h2>Monster walk con banda</h2>
     <p>Desplazamiento lateral con resistencia, ideal para glúteo medio y estabilidad de cadera.</p>
     <ul>
-      <li>3 series de 20 pasos</li>
+      <li>3 series de 15 pasos</li>
       <li>Intensidad: Media</li>
       <li>Beneficios: Prevención de lesiones y fuerza lateral</li>
     </ul>
+    <div class="flip-card-inner">
+      <div class="flip-card-front">
     <img src="{% static 'images/monster-walk.jpg' %}" alt="Monster walk" style="width: 100%; border-radius: 8px; margin-top: 10px;">
+  </div>
+      <div class="flip-card-back">
+        🚀🔥💪🏻 100 kcal quemadas aprox
+      </div>
+    </div>
   </div>
 
   <div class="exercise">
@@ -307,7 +430,14 @@
       <li>Intensidad: Media</li>
       <li>Beneficios: Aislamiento de glúteos y gemelos</li>
     </ul>
+    <div class="flip-card-inner">
+      <div class="flip-card-front">
     <img src="{% static 'images/puente-talones.jpg' %}" alt="Puente glúteos banda talones" style="width: 100%; border-radius: 8px; margin-top: 10px;">
+  </div>
+      <div class="flip-card-back">
+        🚀🔥💪🏻 80 kcal quemadas aprox
+      </div>
+    </div>
   </div>
 
   <div class="exercise">
@@ -318,11 +448,18 @@
       <li>Intensidad: Media</li>
       <li>Beneficios: Tonificación y control muscular</li>
     </ul>
+    <div class="flip-card-inner">
+      <div class="flip-card-front">
     <img src="{% static 'images/patada-banda.jpg' %}" alt="Patada glúteo banda" style="width: 100%; border-radius: 8px; margin-top: 10px;">
-
   </div>
+      <div class="flip-card-back">
+        🚀🔥💪🏻 105 kcal quemadas aprox
+      </div>
+    </div>
+  </div>
+</div>
 
-  <div class="exercise">
+<div class="exercise">
     <h2>Sentadilla búlgara con peso</h2>
     <p>Variante avanzada que aumenta la carga y trabaja cada pierna de forma independiente.</p>
     <ul>
@@ -330,7 +467,15 @@
       <li>Intensidad: Alta</li>
       <li>Beneficios: Fuerza y equilibrio unilateral</li>
     </ul>
+    <div class="flip-card-inner">
+      <div class="flip-card-front">
     <img src="{% static 'images/sentadilla-bulgara-peso.jpg' %}" alt="Sentadilla búlgara con peso" style="width: 100%; border-radius: 8px; margin-top: 10px;">
+  </div>
+      <div class="flip-card-back">
+        🚀🔥💪🏻 120 kcal quemadas aprox
+      </div>
+    </div>
+  </div>
   </div>
 
   <div class="exercise">
@@ -341,7 +486,15 @@
       <li>Intensidad: Muy alta</li>
       <li>Beneficios: Desarrollo máximo de glúteos</li>
     </ul>
+    <div class="flip-card-inner">
+      <div class="flip-card-front">
     <img src="{% static 'images/hip-thrust-barra.jpg' %}" alt="Hip Thrust con barra" style="width: 100%; border-radius: 8px; margin-top: 10px;">
+  </div>
+      <div class="flip-card-back">
+        🚀🔥💪🏻 110 kcal quemadas aprox
+      </div>
+    </div>
+  </div>
   </div>
 
   <div class="exercise">
@@ -352,7 +505,15 @@
       <li>Intensidad: Alta</li>
       <li>Beneficios: Tonificación y fuerza en glúteos y piernas</li>
     </ul>
+    <div class="flip-card-inner">
+      <div class="flip-card-front">
     <img src="{% static 'images/step-up-rodillaa.jpg' %}" alt="Step-ups con mancuerna" style="width: 100%; border-radius: 8px; margin-top: 10px;">
+  </div>
+      <div class="flip-card-back">
+        🚀🔥💪🏻 105 kcal quemadas aprox
+      </div>
+    </div>
+  </div>
   </div>
 
   <div class="exercise">
@@ -363,7 +524,15 @@
       <li>Intensidad: Alta</li>
       <li>Beneficios: Activación profunda y aislamiento glúteo</li>
     </ul>
+    <div class="flip-card-inner">
+      <div class="flip-card-front">
     <img src="{% static 'images/puente-gluteos-banda.jpg' %}" alt="Puente de glúteos con banda" style="width: 100%; border-radius: 8px; margin-top: 10px;">
+  </div>
+      <div class="flip-card-back">
+        🚀🔥💪🏻 100 kcal quemadas aprox
+      </div>
+    </div>
+  </div>
   </div>
 
   <div class="exercise">
@@ -374,7 +543,15 @@
       <li>Intensidad: Muy alta</li>
       <li>Beneficios: Potencia y resistencia muscular</li>
     </ul>
+    <div class="flip-card-inner">
+      <div class="flip-card-front">
     <img src="{% static 'images/sentadillas-salto-peso.jpg' %}" alt="Sentadillas con salto y peso" style="width: 100%; border-radius: 8px; margin-top: 10px;">
+  </div>
+      <div class="flip-card-back">
+        🚀🔥💪🏻 140 kcal quemadas aprox
+      </div>
+    </div>
+  </div>
   </div>
 
   <div class="exercise">
@@ -385,9 +562,18 @@
       <li>Intensidad: Muy alta</li>
       <li>Beneficios: Fuerza, equilibrio y resistencia muscular</li>
     </ul>
+    <div class="flip-card-inner">
+      <div class="flip-card-front">
     <img src="{% static 'images/lunges-pesados.jpg' %}" alt="Lunges caminando pesados" style="width: 100%; border-radius: 8px; margin-top: 10px;">
   </div>
+      <div class="flip-card-back">
+        🚀🔥💪🏻 110 kcal quemadas aprox
+      </div>
+    </div>
+  </div>
 </div>
+</div>
+
 
 </body>
 </html>
