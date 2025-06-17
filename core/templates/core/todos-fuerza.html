@@ -151,6 +151,57 @@
   border-radius: 8px;
 }
 
+.exercise {
+  perspective: 1000px; /* Necesario para el 3D flip */
+}
+
+.flip-card-inner {
+  position: relative;
+  width: 100%;
+  max-width: 280px;
+  height: 250px;
+  
+  aspect-ratio: 4 / 3;
+  text-align: center;
+  transition: transform 0.6s;
+  transform-style: preserve-3d;
+  margin: 0 auto;
+  border-radius: 8px;
+}
+
+.exercise:hover .flip-card-inner {
+  transform: rotateY(180deg);
+}
+
+.flip-card-front, .flip-card-back {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  backface-visibility: hidden;
+  border-radius: 8px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.flip-card-front img {
+  width: 100%;
+  height: auto;
+  object-fit: cover;
+  border-radius: 8px;
+  object-fit: cover;
+}
+
+.flip-card-back {
+  background-color: #ed563bdc;
+  color: white;
+  font-size: 24px;
+  transform: rotateY(180deg);
+  padding: 20px;
+  box-sizing: border-box;
+  font-weight: 700;
+}
+
     @media screen and (max-width: 768px) {
       .strength-exercises {
         grid-template-columns: repeat(2, 1fr);
@@ -190,125 +241,203 @@
 
   <div class="strength-exercises">
 
-    <div class="exercise">
+   <div class="exercise">
       <h2>Flexiones</h2>
       <p>Las flexiones son un ejercicio clásico para trabajar el pecho, los tríceps y los hombros.</p>
       <ul>
-        <li>3 series de 10 repeticiones</li>
-        <li>Intensidad: Alta</li>
+        <li>2 series de 5 repeticiones</li>
+        <li>Intensidad: Baja</li>
         <li>Beneficios: Fortalece el torso superior</li>
       </ul>
+      <div class="flip-card-inner">
+      <div class="flip-card-front">
       <img src="{% static 'images/flexiones.jpg' %}" alt="Flexiones" style="width: 100%; border-radius: 8px; margin-top: 10px;">
     </div>
+      <div class="flip-card-back">
+        🚀🔥💪🏻 50 kcal quemadas aprox
+      </div>
+    </div>
+  </div>
 
     <div class="exercise">
       <h2>Sentadillas</h2>
       <p>Las sentadillas trabajan principalmente los muslos, glúteos y caderas, mejorando la fuerza en las piernas.</p>
       <ul>
-        <li>4 series de 15 repeticiones</li>
-        <li>Intensidad: Alta</li>
+        <li>3 series de 10 repeticiones</li>
+        <li>Intensidad: Baja</li>
         <li>Beneficios: Mejora fuerza en piernas</li>
       </ul>
+      <div class="flip-card-inner">
+      <div class="flip-card-front">
       <img src="{% static 'images/sentadillas.jpg' %}" alt="Sentadillas" style="width: 100%; border-radius: 8px; margin-top: 10px;">
     </div>
+      <div class="flip-card-back">
+        🚀🔥💪🏻 60 kcal quemadas aprox
+      </div>
+    </div>
+  </div>
 
     <div class="exercise">
       <h2>Fondos en paralelas</h2>
       <p>Trabajo intenso para tríceps, hombros y pectoral inferior usando el propio peso corporal.</p>
       <ul>
-        <li>3 series de 8-10 repeticiones</li>
-        <li>Intensidad: Alta</li>
+        <li>3 series de 5 repeticiones</li>
+        <li>Intensidad: Baja</li>
         <li>Beneficios: Mejora fuerza en el tren superior</li>
       </ul>
+      <div class="flip-card-inner">
+      <div class="flip-card-front">
       <img src="{% static 'images/fondos-paralelas.jpg' %}" alt="Fondos en paralelas" style="width: 100%; border-radius: 8px; margin-top: 10px;">
     </div>
+      <div class="flip-card-back">
+        🚀🔥💪🏻 75 kcal quemadas aprox
+      </div>
+    </div>
+  </div>
 
     <div class="exercise">
       <h2>Plancha</h2>
       <p>La plancha es un ejercicio de fuerza centrado en el core que trabaja todo el torso.</p>
       <ul>
-        <li>3 series de 30 segundos</li>
-        <li>Intensidad: Alta</li>
+        <li>3 series de 20 segundos</li>
+        <li>Intensidad: Baja</li>
         <li>Beneficios: Fortalece abdomen y postura</li>
       </ul>
+      <div class="flip-card-inner">
+      <div class="flip-card-front">
       <img src="{% static 'images/plancha.jpg' %}" alt="Plancha" style="width: 100%; border-radius: 8px; margin-top: 10px;">
     </div>
+      <div class="flip-card-back">
+        🚀🔥💪🏻 40 kcal quemadas aprox
+      </div>
+    </div>
+  </div>
 
   
     <div class="exercise">
       <h2>Dominadas</h2>
       <p>Ejercicio completo de tracción para espalda y brazos, ideal para fuerza del tren superior.</p>
       <ul>
-        <li>4 series de 6-8 repeticiones</li>
-        <li>Intensidad: Alta</li>
+        <li>3 series de 6 repeticiones</li>
+        <li>Intensidad: Baja</li>
         <li>Beneficios: Desarrolla dorsales y bíceps</li>
       </ul>
+      <div class="flip-card-inner">
+      <div class="flip-card-front">
       <img src="{% static 'images/dominadas.jpg' %}" alt="Dominadas" style="width: 100%; border-radius: 8px; margin-top: 10px;">
     </div>
+      <div class="flip-card-back">
+        🚀🔥💪🏻 65 kcal quemadas aprox
+      </div>
+    </div>
+  </div>
 
     <div class="exercise">
       <h2>Puente de glúteos</h2>
       <p>Excelente para fortalecer glúteos e isquiotibiales, protegiendo la zona lumbar.</p>
       <ul>
-        <li>3 series de 12 repeticiones</li>
-        <li>Intensidad: Media</li>
+        <li>3 series de 5 repeticiones</li>
+        <li>Intensidad: Baja</li>
         <li>Beneficios: Activa y fortalece glúteos</li>
       </ul>
+      <div class="flip-card-inner">
+      <div class="flip-card-front">
       <img src="{% static 'images/puente-gluteos.jpg' %}" alt="Puente de glúteos" style="width: 100%; border-radius: 8px; margin-top: 10px;">
     </div>
-    <div class="exercise">
+      <div class="flip-card-back">
+        🚀🔥💪🏻 60 kcal quemadas aprox
+      </div>
+    </div>
+  </div>
+  
+  <div class="exercise">
     <h2>Flexiones con palmada</h2>
     <p>Una variante explosiva de las flexiones que mejora fuerza y coordinación en el tren superior.</p>
     <ul>
-      <li>3 series de 10 repeticiones</li>
-      <li>Intensidad: Media-Alta</li>
+      <li>3 series de 6 repeticiones</li>
+      <li>Intensidad: Media</li>
       <li>Beneficios: Potencia en pecho, tríceps y hombros</li>
     </ul>
+    <div class="flip-card-inner">
+      <div class="flip-card-front">
     <img src="{% static 'images/flexion-palmada.jpg' %}" alt="Flexiones con palmada" style="width: 100%; border-radius: 8px; margin-top: 10px;">
+  </div>
+      <div class="flip-card-back">
+        🚀🔥💪🏻 105 kcal quemadas aprox
+      </div>
+    </div>
   </div>
 
   <div class="exercise">
     <h2>Sentadillas con salto</h2>
     <p>Ejercicio pliométrico que desarrolla fuerza y explosividad en piernas y glúteos.</p>
     <ul>
-      <li>3 series de 12 repeticiones</li>
-      <li>Intensidad: Alta</li>
+      <li>2 series de 8 repeticiones</li>
+      <li>Intensidad: Media</li>
       <li>Beneficios: Mejora potencia y resistencia muscular</li>
     </ul>
+    <div class="flip-card-inner">
+      <div class="flip-card-front">
     <img src="{% static 'images/jump-squats.jpg' %}" alt="Sentadillas con salto" style="width: 100%; border-radius: 8px; margin-top: 10px;">
+  </div>
+      <div class="flip-card-back">
+        🚀🔥💪🏻 110 kcal quemadas aprox
+      </div>
+    </div>
   </div>
 
   <div class="exercise">
     <h2>Plancha con toque de hombros</h2>
     <p>Una variante dinámica de la plancha que fortalece el core y mejora estabilidad.</p>
     <ul>
-      <li>3 series de 30 segundos</li>
+      <li>3 series de 20 segundos</li>
       <li>Intensidad: Media</li>
       <li>Beneficios: Estabilidad central y coordinación</li>
     </ul>
+    <div class="flip-card-inner">
+      <div class="flip-card-front">
     <img src="{% static 'images/shoulder-tap-plank.jpg' %}" alt="Plancha toque hombros" style="width: 100%; border-radius: 8px; margin-top: 10px;">
+  </div>
+      <div class="flip-card-back">
+        🚀🔥💪🏻 95 kcal quemadas aprox
+      </div>
+    </div>
   </div>
 
   <div class="exercise">
     <h2>Peso muerto con mancuernas</h2>
     <p>Ejercicio completo para trabajar cadena posterior y estabilidad lumbar.</p>
     <ul>
-      <li>3 series de 10-12 repeticiones</li>
+      <li>2 series de 10 repeticiones</li>
       <li>Intensidad: Media</li>
       <li>Beneficios: Fortalece glúteos, isquios y espalda baja</li>
     </ul>
+    <div class="flip-card-inner">
+      <div class="flip-card-front">
     <img src="{% static 'images/peso-muerto-pesado.jpg' %}" alt="Peso muerto" style="width: 100%; border-radius: 8px; margin-top: 10px;">
+  </div>
+      <div class="flip-card-back">
+        🚀🔥💪🏻 90 kcal quemadas aprox
+      </div>
+    </div>
   </div>
 
   <div class="exercise">
     <h2>Zancadas caminando</h2>
     <p>Una variante dinámica de las zancadas que mejora equilibrio y fuerza funcional.</p>
     <ul>
-      <li>3 series de 20 pasos (10 por pierna)</li>
-      <li>Intensidad: Media-Alta</li>
+      <li>3 series de 15 pasos (10 por pierna)</li>
+      <li>Intensidad: Media</li>
       <li>Beneficios: Tonificación de piernas y glúteos</li>
     </ul>
+    <div class="flip-card-inner">
+      <div class="flip-card-front">
     <img src="{% static 'images/zancadas-caminando.jpg' %}" alt="Zancadas caminando" style="width: 100%; border-radius: 8px; margin-top: 10px;">
+  </div>
+      <div class="flip-card-back">
+        🚀🔥💪🏻 105 kcal quemadas aprox
+      </div>
+    </div>
   </div>
 
   <div class="exercise">
@@ -319,10 +448,18 @@
       <li>Intensidad: Media</li>
       <li>Beneficios: Fuerza global, coordinación y gasto calórico</li>
     </ul>
+    <div class="flip-card-inner">
+      <div class="flip-card-front">
     <img src="{% static 'images/sentadilla-press.jpg' %}" alt="Sentadilla Press" style="width: 100%; border-radius: 8px; margin-top: 10px;">
   </div>
+      <div class="flip-card-back">
+        🚀🔥💪🏻 120 kcal quemadas aprox
+      </div>
+    </div>
+  </div>
+</div>
 
-  <div class="exercise">
+<div class="exercise">
     <h2>Flexiones a una mano</h2>
     <p>Desafío avanzado para la fuerza y estabilidad del tren superior, requiere gran control y balance.</p>
     <ul>
@@ -330,7 +467,14 @@
       <li>Intensidad: Muy alta</li>
       <li>Beneficios: Fuerza unilateral, equilibrio y coordinación</li>
     </ul>
+    <div class="flip-card-inner">
+      <div class="flip-card-front">
     <img src="{% static 'images/flexion-una-mano.jpg' %}" alt="Flexiones a una mano" style="width: 100%; border-radius: 8px; margin-top: 10px;">
+  </div>
+      <div class="flip-card-back">
+        🚀🔥💪🏻 180 kcal quemadas aprox
+      </div>
+    </div>
   </div>
 
   <div class="exercise">
@@ -341,7 +485,14 @@
       <li>Intensidad: Muy alta</li>
       <li>Beneficios: Fuerza, potencia, estabilidad central</li>
     </ul>
+    <div class="flip-card-inner">
+      <div class="flip-card-front">
     <img src="{% static 'images/sentadilla-barra.jpg' %}" alt="Sentadillas con barra" style="width: 100%; border-radius: 8px; margin-top: 10px;">
+  </div>
+      <div class="flip-card-back">
+        🚀🔥💪🏻 120 kcal quemadas aprox
+      </div>
+    </div>
   </div>
 
   <div class="exercise">
@@ -349,10 +500,17 @@
     <p>Variante extrema para fortalecer core y estabilidad con gran demanda neuromuscular.</p>
     <ul>
       <li>4 series de 40 segundos</li>
-      <li>Intensidad: Muy alta</li>
+      <li>Intensidad: Alta </li>
       <li>Beneficios: Core, estabilidad y control corporal</li>
     </ul>
+    <div class="flip-card-inner">
+      <div class="flip-card-front">
     <img src="{% static 'images/plancha.jpg' %}" alt="Plancha elevación alterna" style="width: 100%; border-radius: 8px; margin-top: 10px;">
+  </div>
+      <div class="flip-card-back">
+        🚀🔥💪🏻 105 kcal quemadas aprox
+      </div>
+    </div>
   </div>
 
   <div class="exercise">
@@ -360,10 +518,17 @@
     <p>Ejercicio clave para fuerza máxima en cadena posterior y estabilidad lumbar.</p>
     <ul>
       <li>4 series de 6-8 repeticiones</li>
-      <li>Intensidad: Muy alta</li>
+      <li>Intensidad: Alta</li>
       <li>Beneficios: Fuerza global, potencia y resistencia</li>
     </ul>
+    <div class="flip-card-inner">
+      <div class="flip-card-front">
     <img src="{% static 'images/peso-muerto-pesado.jpg' %}" alt="Peso muerto pesado" style="width: 100%; border-radius: 8px; margin-top: 10px;">
+  </div>
+      <div class="flip-card-back">
+        🚀🔥💪🏻 100 kcal quemadas aprox
+      </div>
+    </div>
   </div>
 
   <div class="exercise">
@@ -371,10 +536,17 @@
     <p>Combinación avanzada para potencia, resistencia y explosividad en piernas.</p>
     <ul>
       <li>4 series de 12 saltos con peso moderado</li>
-      <li>Intensidad: Muy alta</li>
+      <li>Intensidad: Alta</li>
       <li>Beneficios: Fuerza explosiva, equilibrio y coordinación</li>
     </ul>
+    <div class="flip-card-inner">
+      <div class="flip-card-front">
     <img src="{% static 'images/zancadas-peso-salto.jpg' %}" alt="Zancadas con salto y peso" style="width: 100%; border-radius: 8px; margin-top: 10px;">
+  </div>
+      <div class="flip-card-back">
+        🚀🔥💪🏻 105 kcal quemadas aprox
+      </div>
+    </div>
   </div>
 
   <div class="exercise">
@@ -382,12 +554,19 @@
     <p>Ejercicio unilateral exigente para fuerza y estabilidad del tren inferior.</p>
     <ul>
       <li>4 series de 10-12 repeticiones por pierna</li>
-      <li>Intensidad: Muy alta</li>
+      <li>Intensidad: Alta</li>
       <li>Beneficios: Fuerza unilateral, balance y potencia</li>
     </ul>
+    <div class="flip-card-inner">
+      <div class="flip-card-front">
     <img src="{% static 'images/sentadilla-bulgara-pesada.jpg' %}" alt="Sentadilla búlgara con mancuernas" style="width: 100%; border-radius: 8px; margin-top: 10px;">
   </div>
-
+      <div class="flip-card-back">
+        🚀🔥💪🏻 120 kcal quemadas aprox
+      </div>
+    </div>
+  </div>
+    
   </div>
 </body>
 </html>
