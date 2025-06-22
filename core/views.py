@@ -12,9 +12,7 @@ import json
 
 
 # Definimos el cliente de OpenAI
-client = OpenAI(
-  api_key="Tu-APIKey-aqui"
-)
+
 
 
 def openAIQuestion(request):
@@ -265,6 +263,25 @@ def comienza_entreno(request):
         messages.warning(request, "Debes iniciar sesión para subir ejercicios.")
         return redirect('user_login')
     return render(request, "core/comienza-entreno.html")
+
+
+
+#Hacer que la IA aprenda de los ejercicios que suban los usuarios:
+def ejercicios_por_categoria(request, categoria):
+    # Buscar hasta 5 ejercicios por categoría
+    ejercicios_similares = Ejercicio.objects.filter(categoria=categoria).order_by('-fecha_creacion')[:5]
+    
+    # Crear el texto para mostrar
+    texto_ejercicios = ""
+    for ej in ejercicios_similares:
+        texto_ejercicios += f"- {ej.titulo}: {ej.descripcion[:100]}...\n"
+
+    # Puedes pasar este texto o devolverlo, pero en mi caso lo tengo con el prompt específico
+    return render(request, 'ejercicios/categoria.html', {'texto_ejercicios': texto_ejercicios})
+
+
+
+
 
 def logout_view(request):
     logout(request)
