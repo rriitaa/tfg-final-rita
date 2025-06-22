@@ -106,19 +106,28 @@
     }
 
     .view-button {
-      background-color: #ed563b;
-      color: white;
-      padding: 10px 20px;
-      font-size: 16px;
-      text-decoration: none;
-      border-radius: 5px;
-      display: inline-block;
-      margin-top: 10px;
-    }
+  background-color: #ed563b;
+  color: white;
+  padding: 10px 20px;
+  font-size: 16px;
+  text-decoration: none;
+  border-radius: 5px;
+  display: inline-block;
+  margin-top: 10px;
 
-    .view-button:hover {
-      background-color: #e94d30;
-    }
+  /* Añadido para animar la transición */
+  transition: transform 0.3s ease, background-color 0.3s ease;
+}
+
+.view-button:hover {
+  background-color: #000000; /* fondo gris claro */
+  color: #ffffff; /* letra negra */
+  transform: scale(1.1); /* zoom 10% */
+  border: 3px solid #ed563b; /* borde negro */
+}
+
+
+
 
     /* Responsividad */
     @media screen and (max-width: 768px) {
