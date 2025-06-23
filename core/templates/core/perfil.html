@@ -99,20 +99,28 @@
     }
 
     .form-container button {
-      margin-top: 20px;
-      width: 100%;
-      padding: 12px;
-      background-color: #ed563b;
-      color: white;
-      font-size: 16px;
-      border: none;
-      border-radius: 8px;
-      cursor: pointer;
-    }
+  margin-top: 20px;
+  width: 100%;
+  padding: 12px;
+  background-color: #ed563b;
+  color: white;
+  font-size: 16px;
+  font-weight: 600;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: background-color 0.1s ease, transform 0.1s ease;
+}
 
-    .form-container button:hover {
-      background-color: #f9735b;
-    }
+
+
+.form-container button:hover {
+  background-color: #000000; /* verde suave */
+  color: #ffffff; /* letra negra */
+  transform: scale(1.03);
+  border: 3px solid #ed563b; /* borde naranja */
+}
+
   </style>
 </head>
 <body>
