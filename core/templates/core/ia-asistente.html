@@ -121,8 +121,11 @@
     }
 
     .send-button:hover {
-      background-color: #f9735b;
-    }
+  background-color: #b7f0b6; /* fondo gris claro */
+  color: #030303; /* letra negra */
+  transform: scale(1.1); /* zoom 10% */
+  border: 3px solid #ed563b; /* borde negro */
+}
 
    /* Estilo para el título "Asistente IA" */
 .titulo-asistente {
@@ -143,6 +146,29 @@
   padding: 10px;
   border-radius: 8px;
 }
+
+@keyframes wowTitle {
+  0%, 100% {
+    color: #ed563b;
+    transform: scale(1);
+    text-shadow: 0 0 10px #ed563b;
+  }
+  50% {
+    color: #ff784e;
+    transform: scale(1.1);
+    text-shadow: 0 0 20px #ff784e, 0 0 30px #ff784e;
+  }
+}
+
+.titulo-asistente {
+  font-size: 60px !important;
+  color: #ed563b;
+  animation: wowTitle 2.5s infinite ease-in-out;
+  transition: transform 0.3s ease;
+  cursor: default;
+  user-select: none;
+}
+
 
 
 
