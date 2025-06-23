@@ -119,9 +119,22 @@
       color: white;
     }
 
-    .action-button:hover {
-      opacity: 0.8;
-    }
+    /* Efecto hover solo para el botón de "Subir publicación" */
+.action-button.modify:hover {
+  background-color: #b7f0b6; /* verde suave */
+  color: #030303; /* letra negra */
+  transform: scale(1.1); /* zoom 10% */
+  border: 3px solid #ed563b; /* borde naranja */
+}
+
+/* Efecto hover solo para el botón de "Eliminar campos" */
+.action-button.delete:hover {
+  background-color: #f3b3b3; /* rojo claro */
+  color: #000000; /* letra negra */
+  transform: scale(1.1); /* zoom 10% */
+  border: 3px solid #5e0707; /* borde rojo oscuro */
+}
+
   </style>
 </head>
 <body>
