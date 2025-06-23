@@ -135,6 +135,69 @@
   border: 3px solid #5e0707; /* borde rojo oscuro */
 }
 
+/* Animación entrada para el título */
+@keyframes titleEntrance {
+  0% {
+    opacity: 0;
+    transform: translateY(-50px) scale(0.8);
+  }
+  60% {
+    opacity: 1;
+    transform: translateY(10px) scale(1.05);
+  }
+  100% {
+    transform: translateY(0) scale(1);
+  }
+}
+
+/* Animación suave de latido para botón "Subir publicación" */
+@keyframes heartbeat {
+  0%, 100% {
+    transform: scale(1);
+  }
+  50% {
+    transform: scale(1.08);
+  }
+}
+
+/* Animación "pop" para clic en botón */
+@keyframes popClick {
+  0% {
+    transform: scale(1);
+  }
+  50% {
+    transform: scale(1.25);
+  }
+  100% {
+    transform: scale(1);
+  }
+}
+
+/* Animación de temblor para contenedor formulario */
+@keyframes shakeBox {
+  0%, 100% { transform: translateX(0); }
+  25% { transform: translateX(-5px); }
+  50% { transform: translateX(5px); }
+  75% { transform: translateX(-3px); }
+}
+
+/* Aplicar animación al título */
+.form-container h1 {
+  animation: titleEntrance 1.2s ease forwards;
+}
+
+/* Temblor suave al cargar el formulario */
+.form-container {
+  animation: shakeBox 0.8s ease-in-out;
+}
+
+/* Latido infinito para botón subir */
+.action-button.modify {
+  animation: heartbeat 1.5s infinite ease-in-out;
+  transition: transform 0.3s ease;
+}
+
+
   </style>
 </head>
 <body>
