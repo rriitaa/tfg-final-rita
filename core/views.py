@@ -268,7 +268,8 @@ def comienza_entreno(request):
 
 #Hacer que la IA aprenda de los ejercicios que suban los usuarios:
 def ejercicios_por_categoria(request, categoria):
-    # Buscar hasta 5 ejercicios por categoría
+    #Buscar hasta 5 ejercicios por categoría
+    #el modelo Ejercicio representa a la tabla core_ejercicio en la bbdd
     ejercicios_similares = Ejercicio.objects.filter(categoria=categoria).order_by('-fecha_creacion')[:5]
     
     # Crear el texto para mostrar
