@@ -15,6 +15,7 @@ import json
 
 
 
+
 def openAIQuestion(request):
     data = json.loads(request.body)
     pregunta = data.get("message", "")
