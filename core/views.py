@@ -322,5 +322,3 @@ def armarPregunta(pregunta_usuario):
     }}
     """
     return pregunta
-
- 
