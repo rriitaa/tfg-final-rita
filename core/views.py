@@ -11,8 +11,8 @@ from openai import OpenAI
 import json
 
 
-# Definimos el cliente de OpenAI
-
+#Definimos el cliente de OpenAI
+#AQUI SE DEBE PEGAR LA API KEY DE OPENAI
 
 
 def openAIQuestion(request):
